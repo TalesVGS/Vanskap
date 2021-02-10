@@ -1,15 +1,24 @@
 <div class="container">
     <header class="header">
-        <h1>SHOP</h1>
+        <h1>LOJA</h1>
     </header>
 
     <main class="main"> 
-        <nav>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <div class="menu">
+                <span class="hamburguer"></span>
+            </div>
+        </label>
+    
+        <div class="barra"></div>
+        
+        <!-- <nav class="nav">
             <ul>
-                <!-- <li [routerLink]="['']"><a>Dashboard</a></li>
-                <li [routerLink]="['/Camisetas']"><a>Camisetas</a></li> -->
+                <li [routerLink]="['']"><a>Dashboard</a></li>
+                <li [routerLink]="['/Camisetas']"><a>Camisetas</a></li>
             </ul>
-        </nav>
+        </nav> -->
         <div class="content">
             <router-outlet></router-outlet>
         </div>
@@ -17,5 +26,5 @@
     <footer class="footer">
         <span>&copy; Tales Víctor</span>
     </footer>
-
+    
 </div>
