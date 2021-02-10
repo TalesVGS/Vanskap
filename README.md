@@ -1,0 +1,2 @@
+# Loja
+projeto para estudo
