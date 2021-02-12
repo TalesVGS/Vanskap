@@ -1,0 +1,47 @@
+form {
+    width: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.514);
+    padding: 60px 20px 40px 20px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+input {
+    width: 300px;
+    padding: 6px 14px;
+    outline: none;
+    border: solid rgba(0, 0, 0, 0.397) 1px;
+    border-radius: 5px;
+    color: rgb(107, 107, 107);
+    font-weight: 500;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.footer .buttons {
+    display: flex;
+}
+
+.footer .buttons button {
+    margin: 0 10px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 7px 14px;
+}
+
+.btn-cancel {
+    background-color: rgb(117, 116, 116);
+}
+
+.btn-save {
+    background-color: rgb(26, 117, 33);
+}

@@ -1,0 +1,66 @@
+<form class="form" [formGroup]="camisetasForm">
+    <div>
+      
+            <label label> Nome </label>
+            <input 
+            input
+            type="text" 
+            maxlength="120" 
+            placeholder="Exemplo: Camiseta Masculina Gola Larga" 
+            formControlName="nome"
+            />
+        
+
+        
+            <label label> Marca </label>
+            <input
+            input
+            type="text" 
+            maxlength="120" 
+            placeholder="Exemplo: Polo" 
+            formControlName="marca"
+            />
+    
+
+          
+            <label label> Cor </label>
+            <input
+            input 
+            type="text" 
+            maxlength="20" 
+            placeholder="Exemplo: Branca, Azul" 
+            formControlName="cor"
+            />
+       
+
+         
+            <label label> Tamanho </label>
+            <input
+            input 
+            type="text" 
+            maxlength="3" 
+            placeholder="Exemplo: P, GG, XGG" 
+            formControlName="tamanho"
+            />
+            
+       
+
+       
+            <label label> Preço </label>
+            <input
+            input 
+            type="text" 
+            maxlength="50" 
+            placeholder="Exemplo: R$ 99,90" 
+            formControlName="preço"
+            />
+
+
+        <div class="footer">
+            <div class="buttons">
+                <br><button class="btn-cancel" (click)="Cancel()">Cancelar</button>
+                <button class="btn-save">Salvar</button>
+            </div>    
+        </div>
+    </div>
+</form>

@@ -6,4 +6,4 @@ export const CONTENT_ROUTES: Routes = [
         loadChildren: () =>
             import('../../pages/camisetas/camisetas.module').then((m) => m.CamisetasModule),
     },
-]
+];
