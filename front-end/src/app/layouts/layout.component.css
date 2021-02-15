@@ -11,12 +11,14 @@
     background-color: rgb(37, 37, 37);
     padding: 15px;
     text-align: left;
+    z-index: 2;
 }
 
 .main {
     width: 100%;
     height: 100%;
     display: flex;
+    margin-bottom: 100px;
 }
 
 .menu {
@@ -83,6 +85,8 @@ input:checked~label .hamburguer:after {
     height: 100%;
     width: 300px;
     position: fixed;
+    padding-top: 80px;
+    top: 0px;
     transition: all .3s linear;
     left: -300px;
 }

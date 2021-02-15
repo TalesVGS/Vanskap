@@ -1,5 +1,6 @@
 form {
-    width: 100%;
+    margin: 0px 220px -100px 220px;
+    width: 450px;
     background-color: white;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.514);
     padding: 60px 20px 40px 20px;
@@ -9,13 +10,13 @@ form {
 }
 
 input {
-    width: 300px;
+    width: 400px;
     padding: 6px 14px;
+    margin: 10px 15px 10px 0px;
     outline: none;
     border: solid rgba(0, 0, 0, 0.397) 1px;
     border-radius: 5px;
     color: rgb(107, 107, 107);
-    font-weight: 500;
 }
 
 .footer {
