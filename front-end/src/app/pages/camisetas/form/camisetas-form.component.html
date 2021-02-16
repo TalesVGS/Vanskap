@@ -1,6 +1,6 @@
 <form class="form" [formGroup]="camisetasForm">
     <div>
-      
+        <app-field-validation-container [required]="true">
             <label label> Nome </label>
             <input 
             input
@@ -9,7 +9,9 @@
             placeholder="Exemplo: Camiseta Masculina Gola Larga" 
             formControlName="nome"
             />
-        
+        </app-field-validation-container>
+
+        <app-field-validation-container [required]="true">
             <label label> Marca </label>
             <input
             input
@@ -18,7 +20,9 @@
             placeholder="Exemplo: Polo" 
             formControlName="marca"
             />
-    
+        </app-field-validation-container>
+
+        <app-field-validation-container [required]="true">
             <label label> Cor </label>
             <input
             input 
@@ -27,7 +31,9 @@
             placeholder="Exemplo: Branca, Azul" 
             formControlName="cor"
             />
-       
+        </app-field-validation-container>
+
+        <app-field-validation-container [required]="true">
             <label label> Tamanho </label>
             <input
             input 
@@ -36,7 +42,9 @@
             placeholder="Exemplo: P, GG, XGG" 
             formControlName="tamanho"
             />
-       
+        </app-field-validation-container>
+
+        <app-field-validation-container [required]="true">
             <label label> Preço </label>
             <input
             input 
@@ -45,6 +53,7 @@
             placeholder="Exemplo: R$ 99,90" 
             formControlName="preço"
             />
+        </app-field-validation-container>
             
         <div class="footer">
             <div class="buttons">
