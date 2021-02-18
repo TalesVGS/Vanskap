@@ -15,4 +15,6 @@ public abstract class AbstractController<C> extends ResponseAbstractController i
         return jsonResponse(service.findAll());
     }
 
+
+
 }

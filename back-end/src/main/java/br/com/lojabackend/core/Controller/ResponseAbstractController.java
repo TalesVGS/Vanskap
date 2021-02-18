@@ -9,5 +9,12 @@ public class ResponseAbstractController {
         return new ResponseEntity<>(object, status);
     }
 
+    protected ResponseEntity<?> jsonResponse(Object object) {
+        return jsonResponse(object, HttpStatus.OK);
+    }
+
+    protected ResponseEntity<?> jsonResponse() {
+        return jsonResponse(null);
+    }
 
 }
