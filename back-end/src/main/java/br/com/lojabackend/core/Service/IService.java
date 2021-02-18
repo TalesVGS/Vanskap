@@ -1,4 +1,8 @@
 package br.com.lojabackend.core.Service;
 
-public interface IService {
+import java.util.List;
+
+public interface IService<C> {
+
+    List<C> findAll();
 }

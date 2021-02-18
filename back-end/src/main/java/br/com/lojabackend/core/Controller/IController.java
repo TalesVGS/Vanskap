@@ -1,4 +1,9 @@
 package br.com.lojabackend.core.Controller;
 
-public interface IController {
+import org.springframework.http.ResponseEntity;
+
+public interface IController<C> {
+
+    ResponseEntity<?> findAll();
+
 }
