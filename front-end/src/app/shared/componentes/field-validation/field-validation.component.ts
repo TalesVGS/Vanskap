@@ -9,8 +9,8 @@ import { FormControlName } from "@angular/forms";
 export class FieldValidationComponent implements OnInit, AfterViewInit {
     @Input() required = false;
 
-    @ContentChild(HTMLElement) label: HTMLElement;
-    @ContentChild(FormControlName) input: FormControlName;
+    // @ContentChild(HTMLElement) label: HTMLElement;
+    // @ContentChild(FormControlName) input: FormControlName;
     
     constructor() {}
 
@@ -18,24 +18,24 @@ export class FieldValidationComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit(): void {}
 
-    Success(): boolean {
-        return this.input.valid && 
-        (this.input.dirty || this.input.touched);
-    }
+    // Success(): boolean {
+    //     return this.input.valid && 
+    //     (this.input.dirty || this.input.touched);
+    // }
   
-    Error(): boolean {
-        return this.input.invalid && 
-        (this.input.dirty || this.input.touched);
-    }
+    // Error(): boolean {
+    //     return this.input.invalid && 
+    //     (this.input.dirty || this.input.touched);
+    // }
   
-    optionClass(): string {
-        if(this.Error()) {
-          return 'has-error';
-        }
+    // optionClass(): string {
+    //     if(this.Error()) {
+    //       return 'has-error';
+    //     }
   
-        if(this.Success()) {
-          return 'has-success';
-        }
-    }
+    //     if(this.Success()) {
+    //       return 'has-success';
+    //     }
+    // }
     
 }
