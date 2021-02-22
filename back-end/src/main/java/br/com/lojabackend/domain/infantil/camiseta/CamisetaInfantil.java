@@ -1,4 +1,4 @@
-package br.com.lojabackend.domain.feminino.camiseta;
+package br.com.lojabackend.domain.infantil.camiseta;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,11 +10,11 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "camisetaFeminina")
+@Table(name = "camisetas_infantil")
 @Getter
 @Setter
-public class Camiseta implements Serializable {
-    private static final long serialVersionUID = 1l;
+public class CamisetaInfantil implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,5 +44,4 @@ public class Camiseta implements Serializable {
     @Size(max = 13)
     @Column(name = "valor")
     private String valor;
-
 }
