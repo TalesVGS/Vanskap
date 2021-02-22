@@ -1,1 +1,15 @@
-atesteeeeeeeeee
+header {
+    background-color: rgb(0, 0, 0);
+}
+
+header h2 {
+    color: white;
+    padding: 20px 100px 20px 100px;
+}
+
+.search {
+    margin: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
