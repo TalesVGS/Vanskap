@@ -2,37 +2,13 @@
     background-color: #15151c;
 }
 
-.row {
+.row-header {
     padding: 20px 15px 15px 40px;
     color: white;
 }
 
-.col input {
-    width: 100%; 
-    outline: none;
-    border: none;
-    padding: 1px 10px;
-    font-size: small;
-    border-radius: 8px;
-}
-
-.searchButton {
-    width: 35px;
-    height: 38px;
-    border: 1px solid #ffffff;
-    background: #0e1fb9;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    outline: none;
-    font-size: 20px;
-    border: none;
-    margin-left: -34px;
-    border-radius: 0px 8px 8px 0px;
-  }
-
-.searchButton:hover {
-    background: #000000;
-    color: #ffffff;
+.h3 {
+    max-width: 300px;
 }
 
 .search {
@@ -41,29 +17,54 @@
     display: flex;
 }
 
-.login {
-    margin-left: 0px;
+.col input {
+    width: 40vh;
+    max-width: 300px;
+    height: 35px;
+    outline: none;
+    border: none;
+    padding: 1px 10px;
+    font-size: small;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+.searchButton {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ffffff;
+    background: #0e1fb9;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    outline: none;
+    font-size: 20px;
+    border: none;
+    margin-left: -34px;
+    margin-top: 4px;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+.searchButton:hover {
+    background: #000000;
+    color: #ffffff;
 }
 
 .h5 {
     max-width: 45px;
     max-height: 15px;
     padding: 0;
-    margin-left: 150px;
     margin-top: 10px;
-    font-size: medium;
+    font-size: large;
 }
 
 .fa-heart {
-    max-width: 17px;
-    max-height: 17px;
     margin-right: 15px;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .fa-shopping-cart {
     max-width: 20px;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .container-fluid {
@@ -74,4 +75,50 @@
 .fa-heart, .fa-shopping-cart,
 .searchButton {
     cursor: pointer;
+}
+
+.icons {
+    max-width: 100px;
+}
+
+.ofertas .col {
+    text-align: center;
+    background-color: #15151c;
+    color: #ffffff;
+    padding: 5px;
+    margin: 5px 0px 5px 3px;
+    cursor: pointer;
+}
+
+.ofertas .col a {
+    font-size: small;
+}
+
+.ofertas .col:hover {
+    background-color: #0e1fb9;
+}
+
+.ofertas .strong {
+    background-color: #0e1fb9;
+}
+
+.cards-col {
+    color: black;
+}
+
+.card-tittle {
+    margin-top: 5px;
+}
+
+.footer footer {
+    background-color: rgb(223, 223, 223);
+    padding: 10px 5px 10px 5px;
+}
+
+.footer span {
+    font-size: x-small;
+}
+
+.footer h6 {
+    font-size: medium;
 }
