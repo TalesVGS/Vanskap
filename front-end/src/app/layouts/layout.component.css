@@ -1,5 +1,5 @@
 .header {
-    background-color: #15151c;
+    background-color: #000000;
 }
 
 .row-header {
@@ -26,7 +26,7 @@
     padding: 1px 10px;
     font-size: small;
     border-radius: 8px;
-    margin-top: 4px;
+    margin-top: 30px;
 }
 
 .searchButton {
@@ -40,7 +40,7 @@
     font-size: 20px;
     border: none;
     margin-left: -34px;
-    margin-top: 4px;
+    margin-top: 30px;
     border-radius: 0px 8px 8px 0px;
   }
 
@@ -53,18 +53,19 @@
     max-width: 45px;
     max-height: 15px;
     padding: 0;
-    margin-top: 10px;
-    font-size: large;
+    margin-top: 35px;
+    margin-right: 10px;
+    font-size: larger;
 }
 
 .fa-heart {
-    margin-right: 15px;
-    margin-top: 12px;
+    margin-right: 10px;
+    margin-top: 38px;
 }
 
 .fa-shopping-cart {
     max-width: 20px;
-    margin-top: 12px;
+    margin-top: 38px;
 }
 
 .container-fluid {
@@ -93,7 +94,7 @@
 
 .ofertas .col {
     text-align: center;
-    background-color: #15151c;
+    background-color: #000000;
     color: #ffffff;
     padding: 5px;
     margin: 5px 0px 5px 3px;
@@ -113,7 +114,18 @@
 }
 
 .cards-col {
-    color: black;
+    color: rgb(0, 0, 0);
+    text-shadow: #00000049 3px 3px 5px;
+    margin-top: 10px;
+}
+
+.card-body {
+    border: #00000033 solid 3px;
+    border-radius: 5px;
+}
+
+.cards-col .col {
+    margin: 10px;
 }
 
 .card-tittle {
@@ -141,4 +153,8 @@
 
 .carousel-caption {
     color: #000000;
+}
+
+.dropdown-menu .item-1 {
+    cursor: text;
 }

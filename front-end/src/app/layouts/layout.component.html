@@ -2,180 +2,179 @@
     <div class="container">
         <div class="row row-header">
             <div class="col text-center mr-0 h3">
-                    Vanskap
+                <img src= "assets/logo-6.png" alt="logo" style="max-width: 125px; max-height: 125px; margin-top: -20px;" />
             </div>
             <div class="col search ml-0">
                 <input type="search" placeholder="O que você deseja?">
                 <button type="submit" class="searchButton">
-                        <i class="fa fa-search"></i>
+                    <i class="fa fa-search"></i>
                 </button>
             </div>
             <div class="col-sm login h5">
-                    Entrar
+                Entrar
             </div>
             <div class="col icons">
-                    <i class="fas fa-heart"></i>
-                    <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-shopping-cart"></i>
             </div>
         </div>
     </div>
 </div>
-    
-        <div class="menu">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                        <li [routerLink]="['']">
-                            <a class="navbar-brand">
-                            <i class="fas fa-home"></i>
-                            </a>
-                        </li>
-                    <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#my-navbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="my-navbar">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">
-                                    Masculino
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item">Roupas</a>
-                                    <div class="dropdown-divider"></div>
-                                    <li [routerLink]="['/masculino/camisetas']"><a class="dropdown-item">Camisetas</a></li>
-                                    <a class="dropdown-item">Shorts</a>
-                                    <a class="dropdown-item">Camisas de Time</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">
-                                    Feminino
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item">Roupas</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item">Camisetas</a>
-                                    <a class="dropdown-item">Shorts</a>
-                                    <a class="dropdown-item">Camisas de Time</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">
-                                    Infantil
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item">Roupas</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item">Camisetas</a>
-                                    <a class="dropdown-item">Shorts</a>
-                                    <a class="dropdown-item">Camisas de Time</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+
+<div class="menu">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" [routerLink]="['']">
+                <i class="fas fa-home"></i>
+            </a>
+            <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#my-navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="my-navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">
+                            Masculino
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item item-1">Roupas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="['/masculino/camisetas']">Camisetas</a>
+                            <a class="dropdown-item">Shorts</a>
+                            <a class="dropdown-item">Camisas de Time</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">
+                            Feminino
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item item-1">Roupas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item">Camisetas</a>
+                            <a class="dropdown-item">Shorts</a>
+                            <a class="dropdown-item">Camisas de Time</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdownSite" data-toggle="dropdown">
+                            Infantil
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item item-1">Roupas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item">Camisetas</a>
+                            <a class="dropdown-item">Shorts</a>
+                            <a class="dropdown-item">Camisas de Time</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
-        
-        
-        <div class="img-home">
-            <img src="https://www.tshirtprintingsydney.com/img/slider/custom-printed-t-shirts.jpg" 
-            alt="imagem pagina inicial" class="img-fluid" />
-        </div>
-        
-        <div class="container ofertas">
-            <div class="row">
-                <div class="col strong"><a><b>CONFIRA AS MELHORES OFERTAS</b></a></div>
-                <div class="col"><a>2 SHORTS POR R$ 60</a></div>
-                <div class="col"><a>4 BONÉS POR R$ 90</a></div>
-                <div class="col"><a>2 ÓCULOS OAKLEY POR R$1000</a></div>
-            </div>
-        </div>
-        
-        <div class="content-home"> 
-            <div class="container-fluid">
-                <div class="row cards-col ">
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://r2imports.vteximg.com.br/arquivos/ids/167536-1000-1000/Camiseta_Branca_100_Poliester__678.jpg?v=637183134501530000" 
-                            class="card-img-top " alt="Camiseta" style="width: 16rem;"/>
-                            <h5 class="card-tittle">Camiseta Masculina Branca Básica Poliéster</h5>
-                            <h5 class="card-text"><b>R$ 59,99</b></h5>
-                            <h6 class="card-text">2x de R$ 30,00</h6>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://flamengo.vteximg.com.br/arquivos/camisa-ff.jpg?v=2" class="card-img-top"
-                            alt="Camisa do Flamengo" style="width: 16rem;">
-                            <h5 class="card-tittle">Camisa Flamengo Jogo 1 Adidas 2020</h5>
-                            <h5 class="card-text"><b>R$ 199,99</b></h5>
-                            <h6 class="card-text">4x de R$ 50,00</h6>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://assets.xtechcommerce.com/uploads/images/medium/dbe29d638dfcc4f645a9a2d5cecdecfd.jpg"
-                            alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
-                            <h5 class="card-tittle">Shorts Summer Feminino Akatsuki</h5>
-                            <h5 class="card-text"><b>R$ 79,99</b></h5>
-                            <h6 class="card-text">2x de R$ 40,00</h6>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://m.media-amazon.com/images/I/61mzl86AF-L._AC_SX385_.jpg"
-                            alt="Short Feminino akatsuki" class="card-img-top" style="width: 13rem;">
-                            <h5 class="card-tittle">Moletom Masculino Algodão Canguru Liso Forrado Macio Bolso Capuz</h5>
-                            <h5 class="card-text"><b>R$ 79,99</b></h5>
-                            <h6 class="card-text">2x de R$ 40,00</h6>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://a-static.mlcdn.com.br/618x463/camiseta-basica-cinza-feminina-m-hering/basicocassia/37421be8d8ef11ea826f4201ac18501e/5cda5ba90faa00d1d1bc4abadb2c12f2.jpg"
-                            alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
-                            <h5 class="card-tittle">Camiseta Feminina Básica Cinza</h5>
-                            <h5 class="card-text"><b>R$ 44,00</b></h5>
-                            <h6 class="card-text">2x de R$ 22,00</h6>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://static.netshoes.com.br/produtos/oculos-oakley-radar-ev-path/44/D63-3901-044/D63-3901-044_zoom1.jpg?ts=1576520658&ims=544x"
-                            alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
-                            <h5 class="card-tittle">Óculos Oakley Radar Ev Path - Branco e Azul</h5>
-                            <h5 class="card-text"><b>R$ 852,59</b></h5>
-                            <h6 class="card-text">até 10x de R$ 85,26</h6>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://images.tcdn.com.br/img/img_prod/570534/bone_liso_aba_curva_anth_co_tela_branco_bordo_1576_1_20180719232001.jpg"
-                            alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
-                            <h5 class="card-tittle">Boné Liso Aba Curva Anth Co Tela Branco/Bordô</h5>
-                            <h5 class="card-text"><b>R$ 68,00</b></h5>
-                            <h6 class="card-text">2x de R$ 35,53</h6>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card-body text-center">
-                            <img src="https://cdn.focanamoda.com.br/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/r/free-fire-battlegrounds-squad-camiseta-infantil-branca.jpg"
-                            alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
-                            <h5 class="card-tittle">Camiseta Infantil Free Fire Battlegrounds Squad</h5>
-                            <h5 class="card-text"><b>R$ 35,90</b></h5>
-                            <h6 class="card-text">3 x R$ 11,97</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
-        </div>
-    
-    
-    <div class="footer">
-        <footer class="text-center text-muted">
-            <span>COPYRIGHT &copy;2021</span> <h6>Vanskap || Outlet</h6>
-        </footer>
+        </nav>
     </div>
+</div>
+
+
+<div class="img-home" *ngIf="router.routerState.snapshot.url == '/'">
+    <img src="https://www.tshirtprintingsydney.com/img/slider/custom-printed-t-shirts.jpg" alt="imagem pagina inicial"
+        class="img-fluid" />
+</div>
+
+<div class="container ofertas" *ngIf="router.routerState.snapshot.url == '/'">
+    <div class="row">
+        <div class="col strong"><a><b>CONFIRA AS MELHORES OFERTAS</b></a></div>
+        <div class="col"><a>2 SHORTS POR R$ 60</a></div>
+        <div class="col"><a>4 BONÉS POR R$ 90</a></div>
+        <div class="col"><a>2 ÓCULOS OAKLEY POR R$1000</a></div>
+    </div>
+</div>
+
+<div class="content-home" *ngIf="router.routerState.snapshot.url == '/'">
+    <div class="container-fluid">
+        <div class="row cards-col ">
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://r2imports.vteximg.com.br/arquivos/ids/167536-1000-1000/Camiseta_Branca_100_Poliester__678.jpg?v=637183134501530000"
+                        class="card-img-top " alt="Camiseta" style="width: 16rem;" />
+                    <h5 class="card-tittle">Camiseta Masculina Branca Básica Poliéster</h5>
+                    <h5 class="card-text"><b>R$ 59,99</b></h5>
+                    <h6 class="card-text">2x de R$ 30,00</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://flamengo.vteximg.com.br/arquivos/camisa-ff.jpg?v=2" class="card-img-top"
+                        alt="Camisa do Flamengo" style="width: 16rem;">
+                    <h5 class="card-tittle">Camisa Flamengo Jogo 1 Adidas 2020</h5>
+                    <h5 class="card-text"><b>R$ 199,99</b></h5>
+                    <h6 class="card-text">4x de R$ 50,00</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://assets.xtechcommerce.com/uploads/images/medium/dbe29d638dfcc4f645a9a2d5cecdecfd.jpg"
+                        alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
+                    <h5 class="card-tittle">Shorts Summer Feminino Akatsuki</h5>
+                    <h5 class="card-text"><b>R$ 79,99</b></h5>
+                    <h6 class="card-text">2x de R$ 40,00</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://m.media-amazon.com/images/I/61mzl86AF-L._AC_SX385_.jpg"
+                        alt="Short Feminino akatsuki" class="card-img-top" style="width: 11rem;">
+                    <h5 class="card-tittle">Moletom Masculino Algodão Canguru Liso Forrado Macio Bolso Capuz</h5>
+                    <h5 class="card-text"><b>R$ 79,99</b></h5>
+                    <h6 class="card-text">2x de R$ 40,00</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://a-static.mlcdn.com.br/618x463/camiseta-basica-cinza-feminina-m-hering/basicocassia/37421be8d8ef11ea826f4201ac18501e/5cda5ba90faa00d1d1bc4abadb2c12f2.jpg"
+                        alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
+                    <h5 class="card-tittle">Camiseta Feminina Básica Cinza</h5>
+                    <h5 class="card-text"><b>R$ 44,00</b></h5>
+                    <h6 class="card-text">2x de R$ 22,00</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://static.netshoes.com.br/produtos/oculos-oakley-radar-ev-path/44/D63-3901-044/D63-3901-044_zoom1.jpg?ts=1576520658&ims=544x"
+                        alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
+                    <h5 class="card-tittle">Óculos Oakley Radar Ev Path - Branco e Azul</h5>
+                    <h5 class="card-text"><b>R$ 852,59</b></h5>
+                    <h6 class="card-text">até 10x de R$ 85,26</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://images.tcdn.com.br/img/img_prod/570534/bone_liso_aba_curva_anth_co_tela_branco_bordo_1576_1_20180719232001.jpg"
+                        alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
+                    <h5 class="card-tittle">Boné Liso Aba Curva Anth Co Tela Branco/Bordô</h5>
+                    <h5 class="card-text"><b>R$ 68,00</b></h5>
+                    <h6 class="card-text">2x de R$ 35,53</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body text-center">
+                    <img src="https://cdn.focanamoda.com.br/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/r/free-fire-battlegrounds-squad-camiseta-infantil-branca.jpg"
+                        alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
+                    <h5 class="card-tittle">Camiseta Infantil Free Fire Battlegrounds Squad</h5>
+                    <h5 class="card-text"><b>R$ 35,90</b></h5>
+                    <h6 class="card-text">3 x R$ 11,97</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content container-sm" *ngIf="router.routerState.snapshot.url !== '/'">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="footer">
+    <footer class="text-center text-muted">
+        <span>COPYRIGHT &copy;2021</span>
+        <h6>Vanskap || Outlet</h6>
+    </footer>
+</div>
