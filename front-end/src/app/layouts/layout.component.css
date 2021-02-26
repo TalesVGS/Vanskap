@@ -77,6 +77,10 @@
     outline: none;
 }
 
+.ofertas .row {
+    margin-top: 20px;
+}
+
 .navbar-light li {
     outline: none;
     list-style: none;
@@ -115,12 +119,12 @@
 
 .cards-col {
     color: rgb(0, 0, 0);
-    text-shadow: #00000049 3px 3px 5px;
+    text-shadow: #0000002a 3px 3px 5px;
     margin-top: 10px;
 }
 
 .card-body {
-    border: #00000033 solid 3px;
+    border: #dddddd8c solid 2px;
     border-radius: 5px;
 }
 
