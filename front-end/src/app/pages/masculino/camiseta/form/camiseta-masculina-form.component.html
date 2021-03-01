@@ -1,5 +1,83 @@
 <div class="form-camisetas-masculinas">
+  <form class="form" [formGroup]="camisetasMasculinasForm">
+    <div class="form-row">
 
-    
+      <div class="form-group col-md-6">
+        <app-field-validation-container [required]="true">  
+          <label label> Nome </label>
+          <input
+          input
+          type="text"
+          maxlength="120"
+          class="form-control"
+          placeholder="Nome da Camiseta"
+          
+          />
+        </app-field-validation-container>
+      </div>
 
+      <div class="form-group col-md-6">
+        <app-field-validation-container [required]="true">
+          <label label> Marca </label>
+          <input
+          input
+          type="text"
+          class="form-control"
+          id="validationCustom02"
+          maxlength="40"
+          placeholder="Nike, Adidas,etc..."
+
+          />
+        </app-field-validation-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <app-field-validation-container [required]="true">
+        <label label> Tamanho </label>
+        <input
+        input
+        type="text"
+        class="form-control"
+        id="validationCustom03"
+        placeholder="PP, PP, M, G, GG..."
+        maxlength="3"
+
+        />
+      </app-field-validation-container>
+    </div>
+
+    <div class="form-group">
+      <app-field-validation-container [required]="true">
+        <label label> Valor </label>
+        <input
+        input
+        type="text" 
+        class="form-control"
+        id="validationCustom04"
+        placeholder="R$ 100,00"
+        maxlength="13"
+
+        />
+      </app-field-validation-container>
+    </div>
+
+    <div class="form-row">
+      <div class="mb-3 col-md-12">
+        <label> Descrição </label>
+        <textarea 
+        class="form-control" 
+        placeholder="Descrição da camiseta" 
+        >
+        </textarea>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="buttons">
+        <button class="btn-cancel" (click)="Cancel()">Cancelar</button>
+        <button class="btn-save" (click)="Save(camisetasMasculinasForm.value">Salvar</button>
+      </div>
+    </div>
+  </form>
 </div>

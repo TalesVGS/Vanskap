@@ -1,0 +1,30 @@
+.form-camisetas-masculinas {
+    margin: 20px 0px 20px 0px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer .buttons {
+    display: flex;
+}
+
+.footer .buttons button {
+    margin: 0 10px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding: 7px 14px;
+}
+
+.btn-cancel {
+    background-color: rgb(117, 116, 116);
+}
+
+.btn-save {
+    background-color: rgb(44, 111, 255);
+}

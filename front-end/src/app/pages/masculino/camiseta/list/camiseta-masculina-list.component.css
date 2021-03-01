@@ -4,7 +4,7 @@
 }
 
 .new-camiseta {
-    background-color: rgb(17, 0, 255);
+    background-color: rgb(29, 99, 250);
     padding: 6px;
     color: white;
     outline: none;
@@ -19,7 +19,7 @@
 }
 
 .new-camiseta:not(:hover) {
-    background-color: rgb(17, 0, 255);
+    background-color:  rgb(29, 99, 250);
     transition: 0.4s;
 }
 

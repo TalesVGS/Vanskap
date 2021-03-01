@@ -1,0 +1,12 @@
+<div 
+    class="field-validation-container required-label"
+    [ngClass]="optionClass()"
+>
+    <ng-content select="[label]"></ng-content>
+    <ng-content select="[input]"></ng-content>
+    
+        <span *ngIf="hasError()"> Preencha esse campo! </span>
+
+        <span *ngIf="hasSuccess()"> Campo preenchido com sucesso! </span>
+
+</div>

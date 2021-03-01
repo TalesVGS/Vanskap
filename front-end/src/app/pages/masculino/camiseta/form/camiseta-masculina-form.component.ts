@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { FormBuilder } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+import { CamisetaMasculinaService } from "../camiseta-masculina.service";
 
 @Component({
     selector: 'app-camiseta-masculina-form',
@@ -7,7 +9,12 @@ import { Router } from "@angular/router";
     styleUrls: ['./camiseta-masculina-form.component.css']
 })
 export class CamisetaMasculinaFormComponent implements OnInit {
-    constructor(public router: Router) {}
+    constructor(
+        public router: Router,
+        private builder: FormBuilder,
+        private camisetaMasculinaService: CamisetaMasculinaService,
+        private activatedRoute: ActivatedRoute,
+    ) {}
 
     ngOnInit(): void {
         
