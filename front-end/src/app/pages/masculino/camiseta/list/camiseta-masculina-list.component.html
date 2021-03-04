@@ -13,33 +13,43 @@
         </button>
     </div>
 
-    <div class="content-home">
-        <div class="row cards-col ">
-            <div class="col">
-                <div class="card-body text-center">
-                    <img src="https://r2imports.vteximg.com.br/arquivos/ids/167536-1000-1000/Camiseta_Branca_100_Poliester__678.jpg?v=637183134501530000"
-                        class="card-img-top " alt="Camiseta" style="width: 16rem;" />
-                    <h5 class="card-tittle">Camiseta Masculina Branca Básica Poliéster</h5>
-                    <h5 class="card-text"><b>R$ 59,99</b></h5>
-                    <h6 class="card-text">2x de R$ 30,00</h6>
-                </div>
+    <div class="row cards-col ">
+        <div class="col" *ngFor="let camiseta of camisetas">
+            <div class="card-body text-center">
+                <img src="" class="card-img-top " alt="Camiseta" style="width: 16rem;" />
+                <h5 class="card-tittle">{{ camiseta.nome }}</h5>
+                <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
+                <button class="btn-edit" data-toggle="tooltip" data-placement="left" title="Alterar"
+                    [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn-delete" tooltip data-toggle="modal" data-target="#staticBackdrop"
+                    data-placement="top" title="Excluir">
+                    <i class="far fa-trash-alt"></i>
+                </button>
             </div>
-            <div class="col">
-                <div class="card-body text-center">
-                    <img src="https://flamengo.vteximg.com.br/arquivos/camisa-ff.jpg?v=2" class="card-img-top"
-                        alt="Camisa do Flamengo" style="width: 16rem;">
-                    <h5 class="card-tittle">Camisa Flamengo Jogo 1 Adidas 2020</h5>
-                    <h5 class="card-text"><b>R$ 199,99</b></h5>
-                    <h6 class="card-text">4x de R$ 50,00</h6>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card-body text-center">
-                    <img src="https://assets.xtechcommerce.com/uploads/images/medium/dbe29d638dfcc4f645a9a2d5cecdecfd.jpg"
-                        alt="Short Feminino akatsuki" class="card-img-top" style="width: 16rem;">
-                    <h5 class="card-tittle">Shorts Summer Feminino Akatsuki</h5>
-                    <h5 class="card-text"><b>R$ 79,99</b></h5>
-                    <h6 class="card-text">2x de R$ 40,00</h6>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Você deseja realmente excluir essa
+                                camiseta?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <b> Ao clicar em excluir, a camiseta será excluída do seu banco de dados.</b>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+                            <button type="button" class="btn-delete-2" data-dismiss="modal"
+                                (click)="deleteById(camiseta.id)">Excluir</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

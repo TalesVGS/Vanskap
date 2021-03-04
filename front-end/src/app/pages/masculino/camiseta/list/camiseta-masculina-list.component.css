@@ -5,9 +5,8 @@
 
 .new-camiseta {
     background-color: rgb(29, 99, 250);
-    padding: 6px;
+    padding: 7px 14px;
     color: white;
-    outline: none;
     border: solid rgba(0, 0, 0, 0) 1px;
     border-radius: 3px;
     margin: 10px 0px 15px 0px;
@@ -23,21 +22,43 @@
     transition: 0.4s;
 }
 
-.cards-col {
-    color: rgb(0, 0, 0);
-    text-shadow: #0000002a 3px 3px 5px;
-    margin-top: 10px;
+.btn-edit {
+    background-color: rgb(30, 189, 64);
+    margin: 8px;
+    padding: 4px 10px;
 }
 
-.card-body {
-    border: #dddddd8c solid 2px;
-    border-radius: 5px;
+.btn-delete {
+    background-color: rgb(29, 99, 250);
+    padding: 4px 10px;
+    margin: 8px;
 }
 
-.cards-col .col {
-    margin: 10px;
+.btn-edit, .new-camiseta, 
+.btn-delete, .btn-delete-2{
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
 }
 
-.card-tittle {
-    margin-top: 5px;
+h5 {
+    word-break: normal;
+}
+
+.btn-delete-2 {
+    background-color: rgb(206, 37, 37);
+    padding: 6px 12px;
+    margin: 8px;
+}
+
+.btn-delete-2:hover {
+    background-color: rgb(187, 8, 8);
+    transition: all 0.15s;
+}
+
+.btn-delete-2:not(:hover) {
+    background-color: rgb(206, 37, 37);
+    transition: all 0.15s;
 }

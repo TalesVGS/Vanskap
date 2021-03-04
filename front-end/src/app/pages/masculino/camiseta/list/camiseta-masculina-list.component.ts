@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import Camiseta from "src/app/pages/camiseta";
 import { CamisetaMasculinaService } from "../camiseta-masculina.service";
 
 @Component({
@@ -13,5 +14,19 @@ export class CamisetaMasculinaListComponent implements OnInit {
         private camisetaMasculinaService: CamisetaMasculinaService,
     ) {}
 
-    ngOnInit(): void {}
+    camisetas: Camiseta[] = [];
+
+    ngOnInit(): void {
+        this.findAllCamiseta();
+    }
+
+    findAllCamiseta(): void {
+        this.camisetaMasculinaService.findAll()
+        .subscribe((response) => (this.camisetas = response));
+    }
+
+    deleteById(id: number): void {
+        this.camisetaMasculinaService.deleteById(id).subscribe(() => this.findAllCamiseta());
+    }
+
 }

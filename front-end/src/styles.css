@@ -12,3 +12,41 @@ html,body {
     font-family: Arial, sans-serif;
 }
 
+.card-body {
+    cursor: pointer;
+}
+
+.card-body:hover {
+    transform: scale(1.04);
+    transition: all 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.219) 1px 1px 20px;
+}
+
+.card-body:not(hover) {
+    transform: scale(1);
+    transition: all 0.4s;
+}
+
+.ofertas .row {
+    margin-top: 20px;
+}
+
+.cards-col {
+    color: rgb(0, 0, 0);
+    text-shadow: #0000002a 3px 3px 5px;
+    margin-top: 10px;
+}
+
+.card-body {
+    border: #dddddd8c solid 2px;
+    border-radius: 5px;
+}
+
+.cards-col .col {
+    margin: 12px;
+}
+
+
+.card-tittle {
+    margin-top: 5px;
+}

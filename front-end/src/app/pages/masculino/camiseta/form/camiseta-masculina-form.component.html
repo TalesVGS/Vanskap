@@ -11,7 +11,7 @@
           maxlength="120"
           class="form-control"
           placeholder="Nome da Camiseta"
-          
+          formControlName="nome"
           />
         </app-field-validation-container>
       </div>
@@ -26,7 +26,7 @@
           id="validationCustom02"
           maxlength="40"
           placeholder="Nike, Adidas,etc..."
-
+          formControlName="marca"
           />
         </app-field-validation-container>
       </div>
@@ -42,7 +42,7 @@
         id="validationCustom03"
         placeholder="PP, PP, M, G, GG..."
         maxlength="3"
-
+        formControlName="tamanho"
         />
       </app-field-validation-container>
     </div>
@@ -57,7 +57,8 @@
         id="validationCustom04"
         placeholder="R$ 100,00"
         maxlength="13"
-
+        formControlName="valor"
+        (input)="justNumbers($event)"
         />
       </app-field-validation-container>
     </div>
@@ -68,6 +69,7 @@
         <textarea 
         class="form-control" 
         placeholder="Descrição da camiseta" 
+        formControlName="descrição"
         >
         </textarea>
       </div>
@@ -76,8 +78,11 @@
     <div class="footer">
       <div class="buttons">
         <button class="btn-cancel" (click)="Cancel()">Cancelar</button>
-        <button class="btn-save" (click)="Save(camisetasMasculinasForm.value">Salvar</button>
+        <button class="btn-save" (click)="Save(camisetasMasculinasForm.value)">Salvar</button>
       </div>
     </div>
   </form>
+  
 </div>
+
+

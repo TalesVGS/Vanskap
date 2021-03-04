@@ -77,10 +77,6 @@
     outline: none;
 }
 
-.ofertas .row {
-    margin-top: 20px;
-}
-
 .navbar-light li {
     outline: none;
     list-style: none;
@@ -117,21 +113,6 @@
     background-color: #0e1fb9;
 }
 
-.cards-col {
-    color: rgb(0, 0, 0);
-    text-shadow: #0000002a 3px 3px 5px;
-    margin-top: 10px;
-}
-
-.card-body {
-    border: #dddddd8c solid 2px;
-    border-radius: 5px;
-}
-
-.cards-col .col {
-    margin: 10px;
-}
-
 .card-tittle {
     margin-top: 5px;
 }
@@ -144,7 +125,8 @@
 
 .footer footer {
     background-color: rgb(223, 223, 223);
-    padding: 10px 5px 10px 5px;
+    margin-top: 30px;
+    padding: 20px 5px 10px 5px;
 }
 
 .footer span {

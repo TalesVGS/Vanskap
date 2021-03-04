@@ -4,4 +4,5 @@ export default class Camiseta {
     marca: string;
     tamanho: string;
     valor: number;
+    descrição: string;
 }
