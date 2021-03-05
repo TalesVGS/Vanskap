@@ -1,7 +1,6 @@
 <div class="form-camisetas-masculinas">
   <form class="form" [formGroup]="camisetasMasculinasForm">
     <div class="form-row">
-
       <div class="form-group col-md-6">
         <app-field-validation-container [required]="true">  
           <label label> Nome </label>
@@ -74,15 +73,13 @@
         </textarea>
       </div>
     </div>
-
     <div class="footer">
       <div class="buttons">
         <button class="btn-cancel" (click)="Cancel()">Cancelar</button>
-        <button class="btn-save" (click)="Save(camisetasMasculinasForm.value)">Salvar</button>
+        <button class="btn-save" id="toast-success" (click)="Save(camisetasMasculinasForm.value)">Salvar</button>
       </div>
     </div>
   </form>
-  
 </div>
 
 
