@@ -45,8 +45,6 @@ public class CamisetaMasculina implements Serializable {
     @Column(name = "valor")
     private String valor;
 
-    @NotEmpty
-    @NotBlank
     @Column(name = "imagem")
     private String imageUrl;
 }
