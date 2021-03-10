@@ -19,11 +19,11 @@ export class CamisetaMasculinaFormComponent implements OnInit {
 
     camisetasMasculinasForm: FormGroup;
     action: string;
+    selectedImage: File;
 
     ngOnInit(): void {
         this.createForm();
         this.action = this.activatedRoute.snapshot.url[0].path;
-
         if(this.action == 'alterar') {
             this.setValue();
         }
@@ -44,8 +44,13 @@ export class CamisetaMasculinaFormComponent implements OnInit {
             marca: [null, [Validators.required, Validators.maxLength(60)]],
             tamanho: [null, [Validators.required, Validators.maxLength(3)]],
             valor: [null, [Validators.required, Validators.maxLength(13)]],
-            descrição: [null, [Validators.maxLength(250)]]
+            descrição: [null, [Validators.maxLength(250)]],
+            image: [null, Validators.required]
         });
+    }
+
+    onFileChange(event: Event) {
+        this.selectedImage = (event.target as HTMLInputElement).files[0];
     }
 
     Cancel(): void {
@@ -60,9 +65,9 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         if(this.camisetasMasculinasForm.invalid) {
             return;
         }
-
+        
         this.camisetaMasculinaService
-        .save(value)
+        .save(value, this.selectedImage)
         .subscribe(()=> this.router.navigate(['/masculino/camisetas']));
     }
 

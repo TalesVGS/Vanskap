@@ -28,3 +28,9 @@
 .btn-save {
     background-color: rgb(44, 111, 255);
 }
+
+input[type="file"] {
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
