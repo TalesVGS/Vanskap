@@ -44,4 +44,9 @@ public class CamisetaMasculina implements Serializable {
     @Size(max = 13)
     @Column(name = "valor")
     private String valor;
+
+    @NotEmpty
+    @NotBlank
+    @Column(name = "imagem")
+    private String imageUrl;
 }
