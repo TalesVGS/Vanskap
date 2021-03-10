@@ -45,12 +45,13 @@ export class CamisetaMasculinaFormComponent implements OnInit {
             tamanho: [null, [Validators.required, Validators.maxLength(3)]],
             valor: [null, [Validators.required, Validators.maxLength(13)]],
             descrição: [null, [Validators.maxLength(250)]],
-            image: [null, Validators.required]
+            imageUrl: [null]
         });
     }
 
     onFileChange(event: Event) {
         this.selectedImage = (event.target as HTMLInputElement).files[0];
+        
     }
 
     Cancel(): void {

@@ -16,7 +16,7 @@
     <div class="row cards-col ">
         <div class="col" *ngFor="let camiseta of camisetas">
             <div class="card-body text-center">
-                <img [src]="'http://localhost:8080/images/' + camiseta.image" class="card-img-top " alt="Camiseta Imagem" style="width: 16rem;" />
+                <img src="{{ camiseta.imageUrl }}" class="card-img-top " alt="Camiseta Imagem" style="width: 16rem;" />
                 <h5 class="card-tittle">{{ camiseta.nome }}</h5>
                 <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
                 <button class="btn-edit" data-toggle="tooltip" data-placement="left" title="Alterar"

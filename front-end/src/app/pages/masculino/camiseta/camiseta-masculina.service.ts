@@ -29,12 +29,12 @@ export class CamisetaMasculinaService {
         if(selectedImage) {
             observable = observable.pipe(
                 switchMap(() => {
-                    if (!data.image) {
-                        data.image = this.randomStr();
+                    if (!data.imageUrl) {
+                        data.imageUrl = this.randomStr();
                     }
                     
                     const formData: FormData = new FormData();
-                    formData.append('pid', data.image);
+                    formData.append('pid', data.imageUrl);
                     formData.append('file', selectedImage);
                     
                     return this.http.post(`http://localhost:8080/images`, formData, {
@@ -49,8 +49,6 @@ export class CamisetaMasculinaService {
             } else {
                 return this.http.post<Camiseta>(this.url, data);
             }
-            
-
     }
 
     findById(id: number): Observable<Camiseta> {
