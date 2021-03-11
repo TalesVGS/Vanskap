@@ -11,7 +11,7 @@ export class CamisetaMasculinaService {
 
     protected url = `http://localhost:8080/camisetas/masculino`
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
     findAll(): Observable<Camiseta[]> {
         return this.http.get<Camiseta[]>(this.url);
@@ -21,34 +21,35 @@ export class CamisetaMasculinaService {
         return this.http.delete(`${this.url}/${id}`);
     }
 
-    save(data: Camiseta, selectedImage?: File): Observable<Camiseta> {
+    save(data: Camiseta, selectedImage: File): Observable<Camiseta> {
 
         let observable = of({});
-        
-        
-        if(selectedImage) {
+
+
+        if (selectedImage) {
             observable = observable.pipe(
                 switchMap(() => {
                     if (!data.imageUrl) {
                         data.imageUrl = this.randomStr();
                     }
-                    
+
                     const formData: FormData = new FormData();
                     formData.append('pid', data.imageUrl);
                     formData.append('file', selectedImage);
-                    
+
                     return this.http.post(`http://localhost:8080/images`, formData, {
                         responseType: 'text'
                     })
                 })
-                
-                );
-            }
-            if(data.id) {
-                return this.http.put<Camiseta>(this.url, data);
-            } else {
-                return this.http.post<Camiseta>(this.url, data);
-            }
+            );
+        }
+        console.log(selectedImage)
+                if (data.id) {
+                    return this.http.put<Camiseta>(this.url, data);
+                } else {
+                    return this.http.post<Camiseta>(this.url, data);
+                }
+         
     }
 
     findById(id: number): Observable<Camiseta> {
@@ -65,5 +66,5 @@ export class CamisetaMasculinaService {
 
         return result;
     }
-    
+
 }
