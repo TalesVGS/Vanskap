@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute, Router } from "@angular/router";
 import Camiseta from "src/app/pages/camiseta";
 import { CamisetaMasculinaService } from "../camiseta-masculina.service";
+import { CamisetaMasculinaListComponent } from "../list/camiseta-masculina-list.component";
 
 @Component({
     selector: 'app-camiseta-masculina-form',
@@ -15,17 +17,21 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         private builder: FormBuilder,
         private camisetaMasculinaService: CamisetaMasculinaService,
         private activatedRoute: ActivatedRoute,
-    ) {}
+        private sanitizer: DomSanitizer,
+    ) { }
 
     camisetasMasculinasForm: FormGroup;
     action: string;
     selectedImage: File;
+    urlImage;
+    Camiseta: CamisetaMasculinaListComponent
 
     ngOnInit(): void {
-     
+        document.getElementById("preview-image").hidden = true;
+
         this.createForm();
         this.action = this.activatedRoute.snapshot.url[0].path;
-        if(this.action == 'alterar') {
+        if (this.action == 'alterar') {
             this.setValue();
         }
     }
@@ -34,8 +40,8 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         const id = this.activatedRoute.snapshot.url[1].path;
 
         this.camisetaMasculinaService
-        .findById(Number(id))
-        .subscribe((response) => this.camisetasMasculinasForm.patchValue(response));
+            .findById(Number(id))
+            .subscribe((response) => this.camisetasMasculinasForm.patchValue(response));
     }
 
     createForm(): void {
@@ -52,31 +58,38 @@ export class CamisetaMasculinaFormComponent implements OnInit {
 
     onFileChange(event: Event) {
         this.selectedImage = (event.target as HTMLInputElement).files[0];
-        
+
+        document.getElementById("preview-image").hidden = false;
+        let reader = new FileReader();
+        reader.readAsDataURL(this.selectedImage);
+        reader.onload = (read: any) => {
+            this.urlImage = this.sanitizer.bypassSecurityTrustUrl(read.target.result as any);
+        }
     }
 
     Cancel(): void {
         this.router.navigate(['/masculino/camisetas']);
     }
 
-    Save(value: Camiseta): void {
+    async Save(value: Camiseta): Promise<void> {
         Object.keys(this.camisetasMasculinasForm.controls).forEach(field =>
             this.camisetasMasculinasForm.get(field).markAllAsTouched()
         );
 
-        if(this.camisetasMasculinasForm.invalid) {
+        if (this.camisetasMasculinasForm.invalid) {
             return;
-        }
-    
-        this.camisetaMasculinaService
-        .save(value, this.selectedImage)
-        .subscribe(()=> this.router.navigate(['/masculino/camisetas']));
+        } 
+
+        (await this.camisetaMasculinaService
+            .save(value, this.selectedImage))
+            .subscribe(data => {this.camisetasMasculinasForm.reset(), document.getElementById("preview-image").hidden = true; })
+            
     }
 
     justNumbers(event): void {
         const { value } = event.target;
         this.camisetasMasculinasForm.get('valor')
-        .setValue(value.replace(/\D/g, ''));
-      }
+            .setValue(value.replace(/\D/g, ''));
+    }
 
 }

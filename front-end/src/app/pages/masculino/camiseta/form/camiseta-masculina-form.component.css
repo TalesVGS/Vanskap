@@ -34,3 +34,9 @@ input[type="file"] {
     cursor: pointer;
     outline: none;
 }
+
+.containerImage{
+    width: 250px;
+    height: 250px;
+    background-color: rgba(128, 128, 128, 0.171);
+}

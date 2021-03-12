@@ -1,5 +1,7 @@
-<div class="form-camisetas-masculinas">
-  <form class="form" [formGroup]="camisetasMasculinasForm">
+<div class="containerImage m-auto">
+  <img [src]="urlImage" id="preview-image" width="250" height="250"/>
+</div>
+<form class="form" [formGroup]="camisetasMasculinasForm">
     <div class="form-row">
       <div class="form-group col-md-12 image">
         <app-field-validation-container [required]="true">  
@@ -97,10 +99,10 @@
     <div class="footer">
       <div class="buttons">
         <button class="btn-cancel" (click)="Cancel()">Cancelar</button>
-        <button class="btn-save" id="toast-success" (click)="Save(camisetasMasculinasForm.value)">Salvar</button>
+        <button class="btn-save" (click)="Save(camisetasMasculinasForm.value)">Salvar</button>
       </div>
     </div>
   </form>
-</div>
+
 
 

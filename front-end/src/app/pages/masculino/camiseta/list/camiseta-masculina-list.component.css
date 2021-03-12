@@ -49,16 +49,6 @@ h5 {
 
 .btn-delete-2 {
     background-color: rgb(206, 37, 37);
-    padding: 6px 12px;
+    padding: 4px 10px;
     margin: 8px;
-}
-
-.btn-delete-2:hover {
-    background-color: rgb(187, 8, 8);
-    transition: all 0.15s;
-}
-
-.btn-delete-2:not(:hover) {
-    background-color: rgb(206, 37, 37);
-    transition: all 0.15s;
 }

@@ -12,7 +12,7 @@ export class CamisetaMasculinaListComponent implements OnInit {
     constructor(
         public router: Router,
         private camisetaMasculinaService: CamisetaMasculinaService,
-    ) {}
+    ) { }
 
     camisetas: Camiseta[] = [];
 
