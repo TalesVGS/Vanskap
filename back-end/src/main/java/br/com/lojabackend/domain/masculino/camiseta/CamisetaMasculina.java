@@ -1,5 +1,6 @@
 package br.com.lojabackend.domain.masculino.camiseta;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,5 +47,7 @@ public class CamisetaMasculina implements Serializable {
     private String valor;
 
     @Column(name = "imagem")
-    private String imageUrl;
+    private String imageUrl; 
+
+
 }
