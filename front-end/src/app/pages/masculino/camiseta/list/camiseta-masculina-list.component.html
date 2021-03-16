@@ -13,11 +13,11 @@
         </button>
     </div>
 
-    <div class="row mx-md-n5 cards-col ">
-        <div class="col px-md-5" *ngFor="let camiseta of camisetas">
+    <div class="row cards-col ">
+        <div class="col" *ngFor="let camiseta of camisetas">
             <div class="card-body text-center">
                 
-                <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top " alt="Camiseta Imagem" style="width: 12rem;" />
+                <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top " alt="Camiseta Imagem" style="width: 12rem; height: auto;" />
                 <h5 class="card-tittle">{{ camiseta.nome }}</h5>
                 <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
                 
@@ -25,7 +25,7 @@
                     [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
                     <i class="fas fa-pencil-alt"></i>
                 </button>
-             
+
                 <button type="button" class="btn-delete-2" data-dismiss="modal"
                     (click)="deleteById(camiseta.id)"><i class="far fa-trash-alt"></i>
                 </button>
