@@ -1,6 +1,5 @@
 package br.com.lojabackend.core.Service;
 
-import org.apache.coyote.ErrorState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.validation.Errors;
