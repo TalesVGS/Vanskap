@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { DomSanitizer } from "@angular/platform-browser";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, RouteReuseStrategy } from "@angular/router";
+import { SnackBar1 } from "src/app/material/snackbar/snackbar.component";
 import Camiseta from "src/app/pages/camiseta";
 import { CamisetaMasculinaService } from "../camiseta-masculina.service";
 import { CamisetaMasculinaListComponent } from "../list/camiseta-masculina-list.component";
@@ -18,6 +19,7 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         private camisetaMasculinaService: CamisetaMasculinaService,
         private activatedRoute: ActivatedRoute,
         private sanitizer: DomSanitizer,
+        public snackBar: SnackBar1
     ) { }
 
     camisetasMasculinasForm: FormGroup;
@@ -42,6 +44,7 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         this.camisetaMasculinaService
             .findById(Number(id))
             .subscribe((response) => this.camisetasMasculinasForm.patchValue(response));
+
     }
 
     createForm(): void {
@@ -69,6 +72,7 @@ export class CamisetaMasculinaFormComponent implements OnInit {
 
     Cancel(): void {
         this.router.navigate(['/masculino/camisetas']);
+
     }
 
     async Save(value: Camiseta): Promise<void> {
@@ -78,12 +82,20 @@ export class CamisetaMasculinaFormComponent implements OnInit {
 
         if (this.camisetasMasculinasForm.invalid) {
             return;
-        } 
+        }
 
         (await this.camisetaMasculinaService
             .save(value, this.selectedImage))
-            .subscribe(data => {this.camisetasMasculinasForm.reset(), document.getElementById("preview-image").hidden = true; })
-            
+            .subscribe(data => { this.camisetasMasculinasForm.reset(), document.getElementById("preview-image").hidden = true; })
+
+        this.snackBar.openSnackBarSucess();
+
+        this.action = this.activatedRoute.snapshot.url[0].path;
+        if (this.action == 'alterar') {
+            this.snackBar.openSnackBarUpdate();
+        }
+
+
     }
 
     justNumbers(event): void {
@@ -91,5 +103,6 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         this.camisetasMasculinasForm.get('valor')
             .setValue(value.replace(/\D/g, ''));
     }
+
 
 }

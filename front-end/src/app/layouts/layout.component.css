@@ -19,7 +19,7 @@
 }
 
 .col input {
-    width: 40vh;
+    width: 36vh;
     max-width: 300px;
     height: 35px;
     outline: none;
@@ -53,7 +53,6 @@
 }
 
 .h5 {
-    max-width: 45px;
     max-height: 15px;
     padding: 0;
     margin-top: 35px;
