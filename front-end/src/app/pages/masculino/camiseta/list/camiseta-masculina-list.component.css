@@ -43,10 +43,6 @@
     border-radius: 0.25rem;
 }
 
-h5 {
-    word-break: normal;
-}
-
 .btn-delete-2 {
     background-color: rgb(206, 37, 37);
     padding: 4px 10px;

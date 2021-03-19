@@ -1,0 +1,23 @@
+mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-dialog-close {
+    background-color: rgb(158, 157, 157);
+    color: white;
+}
+
+.btn-dialog-delete {
+    background-color: rgb(202, 14, 14);
+    color: white;
+}
+
+.btn-dialog-close, .btn-dialog-delete {
+    padding: 4px 10px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+}

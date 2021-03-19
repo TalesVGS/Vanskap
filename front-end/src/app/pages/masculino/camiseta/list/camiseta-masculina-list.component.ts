@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { DialogComponent } from "src/app/shared/componentes/dialog/dialog.component";
 import Camiseta from "src/app/pages/camiseta";
 import { CamisetaMasculinaService } from "../camiseta-masculina.service";
 
@@ -12,6 +13,7 @@ export class CamisetaMasculinaListComponent implements OnInit {
     constructor(
         public router: Router,
         private camisetaMasculinaService: CamisetaMasculinaService,
+        public dialog: DialogComponent
     ) { }
 
     camisetas: Camiseta[] = [];
@@ -27,6 +29,10 @@ export class CamisetaMasculinaListComponent implements OnInit {
 
     deleteById(id: number): void {
         this.camisetaMasculinaService.deleteById(id).subscribe(() => this.findAllCamiseta());
+    }
+
+    openModal() {
+        this.dialog.openDialog();
     }
 
 }

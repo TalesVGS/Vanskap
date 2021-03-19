@@ -1,0 +1,22 @@
+<h4 mat-dialog-tittle>
+    Deseja realmente excluir esta camiseta?
+</h4>
+
+<mat-dialog-content 
+style="
+border-top: 1px rgba(151, 151, 151, 0.788) solid;
+padding-top: 30px;
+"
+>
+    Ao clicar em excluir, a camiseta será apagada do banco de dados!
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-dialog-close class="btn-dialog-close">
+        Fechar
+    </button>
+
+    <button mat-dialog-close class="btn-dialog-delete" (click)="deleteById(camiseta.id)">
+        Excluir
+    </button>
+</mat-dialog-actions>

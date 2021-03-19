@@ -22,10 +22,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-top: 20px;
 }
 
-.cards-col {
+.card {
     color: rgb(0, 0, 0);
     text-shadow: #0000002a 3px 3px 5px;
     margin-top: 10px;
+    border: none;
 }
 
 .card-body {
@@ -33,15 +34,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 5px;
 }
 
-.cards-col .col {
-    margin: 12px;
+.col-sm-4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .card-tittle {
-    margin-top: 5px;
+    margin-top: 15px;
+    word-break: normal;
 }
 
 .green-snackbar{
     background-color: rgba(20, 158, 43, 0.911);
     color: white;
 }
+
+.mat-tooltip {
+    font-size: small;
+}
+

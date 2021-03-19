@@ -13,24 +13,26 @@
         </button>
     </div>
 
-    <div class="row cards-col ">
-        <div class="col" *ngFor="let camiseta of camisetas">
-            <div class="card-body text-center">
-                
-                <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top " alt="Camiseta Imagem" style="width: 12rem; height: auto;" />
-                <h5 class="card-tittle">{{ camiseta.nome }}</h5>
-                <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
-                
-                <button class="btn-edit" data-toggle="tooltip" data-placement="left" title="Alterar"
-                    [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
-                    <i class="fas fa-pencil-alt"></i>
-                </button>
+    <div class="row" >
+        <div class="col-sm-4" *ngFor="let camiseta of camisetas">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top"
+                        alt="Camiseta Imagem" style="height: 250px; width: 210px;"/>
+                    <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
+                    <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
 
-                <button class="btn-delete-2" data-toggle="tooltip" data-placement="left" title="Excluir"
-                    (click)="deleteById(camiseta.id)"><i class="far fa-trash-alt"></i>
-                </button>
+                    <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="500"
+                        [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
 
-                
+                    <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
+                        matTooltipHideDelay="500" (click)="openModal()"><i class="far fa-trash-alt"></i>
+                    </button>
+
+                </div>
             </div>
-     </div>
+        </div>
+    </div>
 </div>

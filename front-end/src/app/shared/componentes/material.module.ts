@@ -1,8 +1,11 @@
 import { NgModule } from "@angular/core";
+import { MatDialogModule, MatTooltipModule } from "@angular/material";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const MaterialComponents = [
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatDialogModule
 ];
 
 @NgModule({

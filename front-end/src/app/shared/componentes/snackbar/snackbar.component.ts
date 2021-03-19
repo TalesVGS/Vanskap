@@ -14,7 +14,7 @@ export class SnackBar1 {
 
     openSnackBarSucess() {
         this.snackBar.openFromComponent(SnackBarSucess, {
-            duration: 7000,
+            duration: 5000,
             verticalPosition: 'top',
             horizontalPosition: 'right',
             panelClass: ['green-snackbar']
@@ -23,7 +23,7 @@ export class SnackBar1 {
 
     openSnackBarUpdate() {
         this.snackBar.openFromComponent(SnackBarUpdate, {
-            duration: 7000,
+            duration: 5000,
             verticalPosition: 'top',
             horizontalPosition: 'right',
             panelClass: ['green-snackbar']

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute, Router, RouteReuseStrategy } from "@angular/router";
-import { SnackBar1 } from "src/app/material/snackbar/snackbar.component";
+import { SnackBar1 } from "src/app/shared/componentes/snackbar/snackbar.component";
 import Camiseta from "src/app/pages/camiseta";
 import { CamisetaMasculinaService } from "../camiseta-masculina.service";
 import { CamisetaMasculinaListComponent } from "../list/camiseta-masculina-list.component";
@@ -93,9 +93,8 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         this.action = this.activatedRoute.snapshot.url[0].path;
         if (this.action == 'alterar') {
             this.snackBar.openSnackBarUpdate();
+            this.router.navigate(['/masculino/camisetas']);
         }
-
-
     }
 
     justNumbers(event): void {
@@ -103,6 +102,5 @@ export class CamisetaMasculinaFormComponent implements OnInit {
         this.camisetasMasculinasForm.get('valor')
             .setValue(value.replace(/\D/g, ''));
     }
-
 
 }
