@@ -14,23 +14,24 @@
     </div>
 
     <div class="row" >
-        <div class="col-sm-4" *ngFor="let camiseta of camisetas">
+        <div class="col-lg-4" *ngFor="let camiseta of camisetas">
             <div class="card">
                 <div class="card-body text-center">
-                    <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top"
-                        alt="Camiseta Imagem" style="height: 250px; width: 210px;"/>
-                    <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
-                    <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
-
-                    <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="500"
-                        [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
-                        <i class="fas fa-pencil-alt"></i>
-                    </button>
-
-                    <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
-                        matTooltipHideDelay="500" (click)="openModal()"><i class="far fa-trash-alt"></i>
-                    </button>
-
+                    <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top img-fluid"
+                        alt="Camiseta Imagem" style="height: 300px; width: auto;"/>
+                    <div class="card-description" style="height: 160px; width: auto;">
+                        <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
+                        <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
+        
+                        <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="500"
+                            [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+        
+                        <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
+                            matTooltipHideDelay="500" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

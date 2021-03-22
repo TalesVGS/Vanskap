@@ -17,8 +17,13 @@ export class CamisetaMasculinaService {
         return this.http.get<Camiseta[]>(this.url);
     }
 
-    deleteById(id: number): Observable<any> {
+    deleteById(id: number) {
         return this.http.delete(`${this.url}/${id}`);
+    }
+
+    deleteImage(imageName) {
+        console.log(imageName);
+        return this.http.delete(`${environment.apiUrl}/images/delete/${imageName}`);
     }
 
     async save(data: Camiseta, selectedImage: File) {

@@ -34,14 +34,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 5px;
 }
 
-.col-sm-4 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.col-lg-4 {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .card-tittle {
-    margin-top: 15px;
-    word-break: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    word-wrap: normal;
+}
+
+.card-text {
+    word-wrap: normal;
+    margin-bottom: 10px;
 }
 
 .green-snackbar{

@@ -27,12 +27,20 @@ export class CamisetaMasculinaListComponent implements OnInit {
         .subscribe((response) => (this.camisetas = response));
     }
 
-    deleteById(id: number): void {
-        this.camisetaMasculinaService.deleteById(id).subscribe(() => this.findAllCamiseta());
+    deleteById(camiseta): void {
+        this.camisetaMasculinaService.deleteById(camiseta.id).subscribe(() => {
+            this.camisetaMasculinaService.deleteImage(camiseta.imageUrl).subscribe(() => {});
+            this.findAllCamiseta();
+        });
     }
 
-    openModal() {
+    openModal(camiseta) {
         this.dialog.openDialog();
+        document.getElementById("btn-delete-camiseta-masculina").addEventListener('click', () => {
+           this.deleteById(camiseta)
+        })
+        
+        
     }
 
 }
