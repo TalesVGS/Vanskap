@@ -15,7 +15,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/images")
 public class ImageController {
-
+    String folder = "D:/workspace/loja/back-end/src/main/resources/static/images/";
     @PostMapping
     public ResponseEntity<?> uploadImage(
             @RequestParam("file") MultipartFile file
@@ -25,7 +25,6 @@ public class ImageController {
             throw new RuntimeException("File given is not valid!");
         }
 
-        String folder = "D:/workspace/loja/back-end/src/main/resources/static/images/";
         String paths;
         try {
             Path pathFolder = Paths.get(folder);
@@ -42,4 +41,18 @@ public class ImageController {
         return new ResponseEntity<>(paths, HttpStatus.OK);
     }
 
+    @DeleteMapping("/delete/{imagename:.+}")
+    public ResponseEntity<?> deleteImage(
+        @PathVariable String imagename
+    ) {
+        Path path = Paths.get(folder + imagename);
+        try {
+            Files.deleteIfExists(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return new ResponseEntity<>(true, HttpStatus.OK);   
+    }
+        
 }
