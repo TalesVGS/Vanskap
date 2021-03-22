@@ -39,8 +39,6 @@ export class CamisetaMasculinaListComponent implements OnInit {
         document.getElementById("btn-delete-camiseta-masculina").addEventListener('click', () => {
            this.deleteById(camiseta)
         })
-        
-        
     }
 
 }
