@@ -14,7 +14,7 @@ public interface IController<C> {
 
     ResponseEntity<?> update(@Validated @RequestBody C object, Errors errors);
 
-    ResponseEntity<?> findOne(@PathVariable long id);
+    ResponseEntity<?> findOne(@PathVariable Long id);
 
-    ResponseEntity<?> deleteById(@PathVariable long id);
+    ResponseEntity<?> deleteById(@PathVariable Long id);
 }

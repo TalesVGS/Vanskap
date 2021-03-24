@@ -19,11 +19,11 @@ public class AbstractService<C> implements IService<C> {
         return repository.save(object);
     }
 
-    public C findById(long id) {
+    public C findById(Long id) {
         return repository.findById(id).get();
     }
 
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         repository.deleteById(id);
     }
 }

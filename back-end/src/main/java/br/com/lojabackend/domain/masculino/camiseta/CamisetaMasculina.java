@@ -20,7 +20,7 @@ public class CamisetaMasculina implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    long id;
+    Long id;
 
     @NotEmpty
     @NotBlank
@@ -49,5 +49,10 @@ public class CamisetaMasculina implements Serializable {
     @Column(name = "imagem")
     private String imageUrl; 
 
+    @Column(name = "descricao")
+    private String descricao; 
+
+    @Column(name = "oferta")
+    private boolean oferta;
 
 }

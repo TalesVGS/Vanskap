@@ -28,12 +28,12 @@ public abstract class AbstractController<C> extends ResponseAbstractController i
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> findOne(@PathVariable long id) {
+    public ResponseEntity<?> findOne(@PathVariable Long id) {
         return jsonResponse(service.findById(id));
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<?> deleteById(@PathVariable long id) {
+    public ResponseEntity<?> deleteById(@PathVariable Long id) {
         service.deleteById(id);
         return jsonResponse();
     }

@@ -10,7 +10,7 @@ public interface IService<C> {
 
     C save(C object, Errors errors);
 
-    C findById(long id);
+    C findById(Long id);
 
-    void deleteById(long id);
+    void deleteById(Long id);
 }
