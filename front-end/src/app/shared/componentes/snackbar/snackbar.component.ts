@@ -14,7 +14,7 @@ export class SnackBar1 {
 
     openSnackBarSucess() {
         this.snackBar.openFromComponent(SnackBarSucess, {
-            duration: 5000,
+            duration: 4000,
             verticalPosition: 'top',
             horizontalPosition: 'right',
             panelClass: ['green-snackbar']
@@ -23,10 +23,19 @@ export class SnackBar1 {
 
     openSnackBarUpdate() {
         this.snackBar.openFromComponent(SnackBarUpdate, {
-            duration: 5000,
+            duration: 4000,
             verticalPosition: 'top',
             horizontalPosition: 'right',
             panelClass: ['green-snackbar']
+        });
+    }
+
+    openSnackBarDelete() {
+        this.snackBar.openFromComponent(SnackBarDelete, {
+            duration: 4000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['red-snackbar']
         });
     }
 
@@ -52,3 +61,13 @@ export class SnackBarSucess {}
     `
 })
 export class SnackBarUpdate {}
+
+@Component({
+    selector: 'snackbar-delete',
+    template: `
+    <div>
+        Camiseta Excluída com Sucesso do Banco de Dados!
+    </div>
+    `
+})
+export class SnackBarDelete {}

@@ -26,7 +26,8 @@ export class CamisetaMasculinaFormComponent implements OnInit {
     action: string;
     selectedImage: File;
     urlImage;
-    Camiseta: CamisetaMasculinaListComponent
+    Camiseta: CamisetaMasculinaListComponent;
+    oferta: boolean = false
 
     ngOnInit(): void {
         document.getElementById("preview-image").hidden = true;
@@ -54,8 +55,9 @@ export class CamisetaMasculinaFormComponent implements OnInit {
             marca: [null, [Validators.required, Validators.maxLength(60)]],
             tamanho: [null, [Validators.required, Validators.maxLength(3)]],
             valor: [null, [Validators.required, Validators.maxLength(13)]],
-            descrição: [null, [Validators.maxLength(250)]],
-            imageUrl: [null, [Validators.required]]
+            descricao: [null, [Validators.maxLength(250)]],
+            imageUrl: [null, [Validators.required]],
+            oferta: [null]
         });
     }
 
@@ -72,10 +74,10 @@ export class CamisetaMasculinaFormComponent implements OnInit {
 
     Cancel(): void {
         this.router.navigate(['/masculino/camisetas']);
-
     }
 
     async Save(value: Camiseta): Promise<void> {
+        value.oferta = this.oferta;
         Object.keys(this.camisetasMasculinasForm.controls).forEach(field =>
             this.camisetasMasculinasForm.get(field).markAllAsTouched()
         );
@@ -95,6 +97,11 @@ export class CamisetaMasculinaFormComponent implements OnInit {
             this.snackBar.openSnackBarUpdate();
             this.router.navigate(['/masculino/camisetas']);
         }
+    }
+
+    onChange(value) {
+        console.log(value);
+        this.oferta = value
     }
 
     justNumbers(event): void {

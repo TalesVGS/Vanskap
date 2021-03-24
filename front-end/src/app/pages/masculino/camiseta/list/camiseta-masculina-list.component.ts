@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { DialogComponent } from "src/app/shared/componentes/dialog/dialog.component";
 import Camiseta from "src/app/pages/camiseta";
 import { CamisetaMasculinaService } from "../camiseta-masculina.service";
+import { SnackBar1 } from "src/app/shared/componentes/snackbar/snackbar.component";
 
 @Component({
     selector: 'app-camiseta-masculina-list',
@@ -13,7 +14,8 @@ export class CamisetaMasculinaListComponent implements OnInit {
     constructor(
         public router: Router,
         private camisetaMasculinaService: CamisetaMasculinaService,
-        public dialog: DialogComponent
+        public dialog: DialogComponent,
+        public snackBar: SnackBar1
     ) { }
 
     camisetas: Camiseta[] = [];
@@ -37,8 +39,8 @@ export class CamisetaMasculinaListComponent implements OnInit {
     openModal(camiseta) {
         this.dialog.openDialog();
         document.getElementById("btn-delete-camiseta-masculina").addEventListener('click', () => {
-           this.deleteById(camiseta)
-        })
+           this.deleteById(camiseta), this.snackBar.openSnackBarDelete();
+        });
     }
 
 }

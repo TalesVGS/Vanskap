@@ -3,6 +3,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@font-face {
+    font-family: "Amstrong";
+    src: local(Amstrong)
+}
+
 .card-body {
     cursor: pointer;
 }
@@ -50,8 +55,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-bottom: 10px;
 }
 
-.green-snackbar{
-    background-color: rgba(20, 158, 43, 0.911);
+.green-snackbar {
+    background-color: rgba(20, 158, 43, 0.945);
     color: white;
 }
 
@@ -59,3 +64,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: small;
 }
 
+div .image {
+    margin-top: 30px;
+}
+
+.red-snackbar {
+    background-color: rgb(173, 27, 27, 0.945);
+    color: white;
+}

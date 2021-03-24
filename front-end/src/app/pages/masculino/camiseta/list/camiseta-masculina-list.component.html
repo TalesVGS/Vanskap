@@ -23,13 +23,13 @@
                         <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
                         <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
         
-                        <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="500"
+                        <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="400"
                             [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
         
                         <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
-                            matTooltipHideDelay="500" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
+                            matTooltipHideDelay="400" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
                         </button>
                     </div>
                 </div>

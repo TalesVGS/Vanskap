@@ -51,5 +51,4 @@ export class CamisetaMasculinaService {
         return this.http.get<Camiseta>(`${this.url}/${id}`);
     }
 
-   
 }

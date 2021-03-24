@@ -1,20 +1,19 @@
 <div class="header">
     <div class="container">
         <div class="row row-header">
-            <div class="col text-left h3" style="max-width: 300px;">
-                <img src="assets/logo-6.png" alt="logo"
-                    style="max-width: 125px; max-height: 125px;" />
+            <div class="col-md-3 h1 logo d-flex align-items-center justify-content-center">
+              Vanskap
             </div>
-            <div class="col search">
+            <div class="col-md-6 search d-flex align-items-center justify-content-center">
                 <input type="search" placeholder="O que você deseja?" maxlength="100">
                 <button type="submit" class="searchButton">
                     <i class="fa fa-search"></i>
                 </button>
             </div>
-            <div class="col login h5 text-right">
+            <div class="col-md-1 login h5 d-flex align-items-center justify-content-center">
                 Entrar
             </div>
-            <div class="col icons">
+            <div class="col-md-2 icons d-flex align-items-center justify-content-center">
                 <i class="fas fa-heart"></i>
                 <i class="fas fa-shopping-cart"></i>
             </div>
@@ -38,8 +37,6 @@
                             Masculino
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item item-1">Roupas</a>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" [routerLink]="['/masculino/camisetas']">Camisetas</a>
                             <a class="dropdown-item">Shorts</a>
                             <a class="dropdown-item">Camisas de Time</a>
@@ -106,6 +103,30 @@
     </a>
 </div>
 
+<div class="row" >
+    <div class="col-lg-4" *ngFor="let camiseta of camisetas">
+        <div class="card">
+            <div class="card-body text-center">
+                <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top img-fluid"
+                    alt="Camiseta Imagem" style="height: 300px; width: auto;"/>
+                <div class="card-description" style="height: 160px; width: auto;">
+                    <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
+                    <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
+    
+                    <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="400"
+                        [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+    
+                    <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
+                        matTooltipHideDelay="400" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container-sm" *ngIf="router.routerState.snapshot.url !== '/'">
     <router-outlet></router-outlet>
 </div>
@@ -113,6 +134,6 @@
 <div class="footer" style="z-index: 2;">
     <footer class="text-center text-muted">
         <span>COPYRIGHT &copy;2021</span>
-        <h6>Vanskap || Outlet</h6>
+        <h5  style="font-family: Amstrong;">Vanskap || Outlet</h5>
     </footer>
 </div>

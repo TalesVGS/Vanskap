@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DialogExampleComponent } from "src/app/shared/componentes/dialog-camisetas/dialog-example.component";
 import { DialogComponent } from "src/app/shared/componentes/dialog/dialog.component";
 import { MaterialModule } from "src/app/shared/componentes/material.module";
-import { SnackBar1, SnackBarSucess, SnackBarUpdate } from "src/app/shared/componentes/snackbar/snackbar.component";
+import { SnackBar1, SnackBarDelete, SnackBarSucess, SnackBarUpdate } from "src/app/shared/componentes/snackbar/snackbar.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { CamisetaMasculinaRoutingModule } from "./camiseta-masculina-routing.module";
 import { CamisetaMasculinaService } from "./camiseta-masculina.service";
@@ -19,12 +19,14 @@ import { CamisetaMasculinaListComponent } from "./list/camiseta-masculina-list.c
         SnackBar1,
         SnackBarUpdate,
         DialogExampleComponent,
-        DialogComponent
+        DialogComponent,
+        SnackBarDelete
     ],
     entryComponents: [
         SnackBarSucess,
         SnackBarUpdate,
-        DialogExampleComponent
+        DialogExampleComponent,
+        SnackBarDelete
     ],
     imports: [
         CommonModule,
@@ -40,6 +42,8 @@ import { CamisetaMasculinaListComponent } from "./list/camiseta-masculina-list.c
         SnackBar1,
         SnackBarUpdate,
         DialogExampleComponent,
-        DialogComponent],
+        DialogComponent,
+        SnackBarDelete
+    ],
 })
 export class CamisetaMasculinaModule {}
