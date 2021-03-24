@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row row-header">
             <div class="col-md-3 h1 logo d-flex align-items-center justify-content-center">
-              Vanskap
+                Vanskap
             </div>
             <div class="col-md-6 search d-flex align-items-center justify-content-center">
                 <input type="search" placeholder="O que você deseja?" maxlength="100">
@@ -89,8 +89,7 @@
                 class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item" data-interval="3500">
-            <img src="http://espacomasculino.com.br/img/banner-calcas-2019.jpg" class="d-block w-100"
-                alt="...">
+            <img src="http://espacomasculino.com.br/img/banner-calcas-2019.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -103,37 +102,34 @@
     </a>
 </div>
 
-<div class="row" >
-    <div class="col-lg-4" *ngFor="let camiseta of camisetas">
-        <div class="card">
-            <div class="card-body text-center">
-                <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top img-fluid"
-                    alt="Camiseta Imagem" style="height: 300px; width: auto;"/>
-                <div class="card-description" style="height: 160px; width: auto;">
-                    <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
-                    <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
-    
-                    <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="400"
-                        [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
-                        <i class="fas fa-pencil-alt"></i>
-                    </button>
-    
-                    <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
-                        matTooltipHideDelay="400" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
-                    </button>
+<div class="container">
+    <div>
+        <h3>Ofertas Ativas</h3>
+    </div>
+
+    <div class="row" *ngIf="router.routerState.snapshot.url == '/'">
+        <div class="col-lg-4" *ngFor="let camiseta of camisetas" style="margin-top: 20px;">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top img-fluid"
+                        alt="Camiseta Imagem" style="height: 300px; width: auto;" />
+                    <div class="card-description" style="height: 100px; width: auto;">
+                        <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
+                        <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-sm" *ngIf="router.routerState.snapshot.url !== '/'">
+<div class="container-sm">
     <router-outlet></router-outlet>
 </div>
 
 <div class="footer" style="z-index: 2;">
     <footer class="text-center text-muted">
         <span>COPYRIGHT &copy;2021</span>
-        <h5  style="font-family: Amstrong;">Vanskap || Outlet</h5>
+        <h5 style="font-family: Amstrong;">Vanskap || Outlet</h5>
     </footer>
 </div>
