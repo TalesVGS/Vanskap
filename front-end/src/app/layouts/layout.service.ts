@@ -15,5 +15,4 @@ export class LayoutService {
         return this.http.get<Camiseta[]>(`${environment.apiUrl}/camisetas/masculino/ofertas`);
     }
 
-
 }

@@ -101,7 +101,7 @@ export class CamisetaMasculinaFormComponent implements OnInit {
 
     onChange(value) {
         console.log(value);
-        this.oferta = value
+        this.oferta = value;
     }
 
     justNumbers(event): void {
