@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.lojabackend.core.Controller.AbstractController;
 
 @RestController
-@RequestMapping("/camisetas/masculino")
+@RequestMapping("/masculino/camisetas")
 public class CamisetaMascController extends AbstractController<CamisetaMasculina> {
 
     @Autowired
