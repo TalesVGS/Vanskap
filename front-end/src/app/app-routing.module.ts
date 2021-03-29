@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from './layouts/layout.component';
-import { CONTENT_ROUTES } from './shared/routes/content.routes.routes';
+import { ContentLayoutComponent } from './layouts/content/content-layout.component';
+
+import { ADMINISTRADOR_ROUTES } from './shared/routes/administrador.routes';
+import { CLIENTE_ROUTES } from './shared/routes/cliente.routes';
+
 
 const routes: Routes = [
   {
-    path: '',
-    component: LayoutComponent,
-    children: CONTENT_ROUTES,
-  }
+    path: "",
+    component: ContentLayoutComponent,
+    children: CLIENTE_ROUTES,
+  },
+  {
+    path: "administrador",
+    component: ContentLayoutComponent,
+    children: ADMINISTRADOR_ROUTES,
+  },
 ];
 
 @NgModule({

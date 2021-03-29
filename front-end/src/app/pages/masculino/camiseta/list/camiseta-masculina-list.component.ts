@@ -1,45 +1,47 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { DialogComponent } from "src/app/shared/componentes/dialog/dialog.component";
-import Camiseta from "src/app/pages/camiseta";
-import { CamisetaMasculinaService } from "../camiseta-masculina.service";
 import { SnackBar1 } from "src/app/shared/componentes/snackbar/snackbar.component";
+import { AbstractListComponent } from "src/app/core/components/abstract-list-component";
+import Camiseta from "src/app/shared/Data/camiseta";
+import { CamisetaMasculinaService } from "src/app/shared/services/camiseta-masculina.service";
 
 @Component({
     selector: 'app-camiseta-masculina-list',
     templateUrl: './camiseta-masculina-list.component.html',
     styleUrls: ['./camiseta-masculina-list.component.css']
 })
-export class CamisetaMasculinaListComponent implements OnInit {
+export class CamisetaMasculinaListComponent extends AbstractListComponent<Camiseta> {
+
+    protected resultados: Camiseta[];
+
     constructor(
+        protected service: CamisetaMasculinaService,
+        protected route: ActivatedRoute,
         public router: Router,
-        private camisetaMasculinaService: CamisetaMasculinaService,
         public dialog: DialogComponent,
         public snackBar: SnackBar1
-    ) { }
-
-    camisetas: Camiseta[] = [];
-
-    ngOnInit(): void {
-        this.findAllCamiseta();
+    ) {
+        super(service, route);
     }
 
-    findAllCamiseta(): void {
-        this.camisetaMasculinaService.findAll()
-        .subscribe((response) => (this.camisetas = response));
+    onListar() {
+        this.service
+            .findAll()
+            .subscribe((resultados) => (this.resultados = resultados));
     }
 
-    deleteById(camiseta): void {
-        this.camisetaMasculinaService.deleteById(camiseta.id).subscribe(() => {
-            this.camisetaMasculinaService.deleteImage(camiseta.imageUrl).subscribe(() => {});
-            this.findAllCamiseta();
+    deleteById(camiseta: Camiseta): void {
+        this.service.deteleById(camiseta.id).subscribe(() => {
+            this.service.deleteImg(camiseta.imageUrl);
+            this.onListar();
         });
     }
 
     openModal(camiseta) {
         this.dialog.openDialog();
         document.getElementById("btn-delete-camiseta-masculina").addEventListener('click', () => {
-           this.deleteById(camiseta), this.snackBar.openSnackBarDelete();
+            this.deleteById(camiseta), this.snackBar.openSnackBarDelete();
         });
     }
 

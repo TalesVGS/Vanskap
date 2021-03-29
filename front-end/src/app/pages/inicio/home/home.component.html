@@ -1,0 +1,53 @@
+
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="3500">
+            <img src="https://lullamodas.com.br/wp-content/uploads/2021/01/banner-pagina-principal01.png"
+                class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-interval="3500">
+            <img src="https://images.tcdn.com.br/img/img_prod/618302/1521386205_moda-bannerfull.jpg"
+                class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-interval="3500">
+            <img src="http://espacomasculino.com.br/img/banner-calcas-2019.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container">
+    <div>
+        <h3 style="margin-top: 30px;">Ofertas Masculinas Ativas</h3>
+    </div>
+
+    <div class="row" >
+        <div class="col-lg-4" *ngFor="let camiseta of camisetas" style="margin-top: 20px;">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top img-fluid"
+                        alt="Camiseta Imagem" style="height: 300px; width: auto;" />
+                    <div class="card-description" style="height: 100px; width: auto;">
+                        <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
+                        <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

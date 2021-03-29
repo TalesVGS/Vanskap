@@ -1,53 +1,75 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { DomSanitizer } from "@angular/platform-browser";
-import { ActivatedRoute, Router, RouteReuseStrategy } from "@angular/router";
-import { SnackBar1 } from "src/app/shared/componentes/snackbar/snackbar.component";
-import Camiseta from "src/app/pages/camiseta";
-import { CamisetaMasculinaService } from "../camiseta-masculina.service";
-import { CamisetaMasculinaListComponent } from "../list/camiseta-masculina-list.component";
+import { ActivatedRoute, Router } from "@angular/router";
+import { AbstractFormComponent } from "src/app/core/components/abstract-form-component";
+import Camiseta from "src/app/shared/Data/camiseta";
+import { CamisetaMasculinaService } from "src/app/shared/services/camiseta-masculina.service";
 
 @Component({
     selector: 'app-camiseta-masculina-form',
     templateUrl: './camiseta-masculina-form.component.html',
     styleUrls: ['./camiseta-masculina-form.component.css']
 })
-export class CamisetaMasculinaFormComponent implements OnInit {
-    constructor(
-        public router: Router,
-        private builder: FormBuilder,
-        private camisetaMasculinaService: CamisetaMasculinaService,
-        private activatedRoute: ActivatedRoute,
-        private sanitizer: DomSanitizer,
-        public snackBar: SnackBar1
-    ) { }
-
+export class CamisetaMasculinaFormComponent extends AbstractFormComponent<Camiseta> {
     camisetasMasculinasForm: FormGroup;
-    action: string;
-    selectedImage: File;
-    urlImage;
-    Camiseta: CamisetaMasculinaListComponent;
-    oferta: boolean = false
+    imagePath;
+    imgURL: any = "../../../../../../assets/img/gallery/preview.jpg";
+    message: string;
+    addBtnLabel: string = "Cancelar";
+    altPrev: boolean = false;
+    savImg: boolean = true;
 
-    ngOnInit(): void {
-        document.getElementById("preview-image").hidden = true;
-
+    onInit() {
         this.createForm();
-        this.action = this.activatedRoute.snapshot.url[0].path;
-        if (this.action == 'alterar') {
-            this.setValue();
+        this.resultadoForm = this.camisetasMasculinasForm;
+        this.navRoute = "/masculino/camisetas";
+        if (this.route.snapshot.url[0].path == "alterar") {
+            this.addBtnLabel = "Voltar";
+            this.altPrev = true;
+            this.savImg = false;
         }
     }
 
-    setValue() {
-        const id = this.activatedRoute.snapshot.url[1].path;
-
-        this.camisetaMasculinaService
-            .findById(Number(id))
-            .subscribe((response) => this.camisetasMasculinasForm.patchValue(response));
-
+    constructor(
+        protected service: CamisetaMasculinaService,
+        protected router: Router,
+        protected route: ActivatedRoute,
+        protected builder: FormBuilder
+    ) {
+        super(service, router, route, builder);
     }
 
+    preview(files) {
+        if (files.length === 0) return;
+
+        var mimeType = files[0].type;
+        if (mimeType.match(/image\/*/) == null) {
+            this.message = "Apenas imagens são suportadas!";
+            return;
+        }
+
+        var reader = new FileReader();
+        this.imagePath = files;
+        reader.readAsDataURL(files[0]);
+        reader.onload = (_event) => {
+            this.imgURL = reader.result;
+        };
+    }
+
+    imgUploadClick() {
+        document.getElementById("Imagem").click();
+        document
+            .getElementById("Imagem")
+            .addEventListener("change", (imgNome: any) => {
+                this.nomeImg = imgNome.target.files[0].name;
+                if (this.nomeImg.length > 100) {
+                    this.message = "Nome muito comprido, por favor altere!";
+                }
+                this.savImg = true;
+                this.altPrev = false;
+                this.service.imgSettedVerify(false);
+            });
+    }
     createForm(): void {
         this.camisetasMasculinasForm = this.builder.group({
             id: null,
@@ -56,58 +78,9 @@ export class CamisetaMasculinaFormComponent implements OnInit {
             tamanho: [null, [Validators.required, Validators.maxLength(3)]],
             valor: [null, [Validators.required, Validators.maxLength(13)]],
             descricao: [null, [Validators.maxLength(250)]],
-            imageUrl: [null, [Validators.required]],
-            oferta: [null]
+            imageUrl: [null],
+            oferta: [null],
         });
-    }
-
-    onFileChange(event: Event) {
-        this.selectedImage = (event.target as HTMLInputElement).files[0];
-
-        document.getElementById("preview-image").hidden = false;
-        let reader = new FileReader();
-        reader.readAsDataURL(this.selectedImage);
-        reader.onload = (read: any) => {
-            this.urlImage = this.sanitizer.bypassSecurityTrustUrl(read.target.result as any);
-        }
-    }
-
-    Cancel(): void {
-        this.router.navigate(['/masculino/camisetas']);
-    }
-
-    async Save(value: Camiseta): Promise<void> {
-        value.oferta = this.oferta;
-        Object.keys(this.camisetasMasculinasForm.controls).forEach(field =>
-            this.camisetasMasculinasForm.get(field).markAllAsTouched()
-        );
-
-        if (this.camisetasMasculinasForm.invalid) {
-            return;
-        }
-
-        (await this.camisetaMasculinaService
-            .save(value, this.selectedImage))
-            .subscribe(data => { this.camisetasMasculinasForm.reset(), document.getElementById("preview-image").hidden = true; })
-
-        this.snackBar.openSnackBarSucess();
-
-        this.action = this.activatedRoute.snapshot.url[0].path;
-        if (this.action == 'alterar') {
-            this.snackBar.openSnackBarUpdate();
-            this.router.navigate(['/masculino/camisetas']);
-        }
-    }
-
-    onChange(value) {
-        console.log(value);
-        this.oferta = value;
-    }
-
-    justNumbers(event): void {
-        const { value } = event.target;
-        this.camisetasMasculinasForm.get('valor')
-            .setValue(value.replace(/\D/g, ''));
     }
 
 }

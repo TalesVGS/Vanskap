@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Camiseta from '../pages/camiseta';
-import { LayoutService } from './layout.service';
+import Camiseta from 'src/app/shared/Data/camiseta';
+import { HomeService } from '../home.service';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class LayoutComponent implements OnInit {
+export class HomeComponent implements OnInit {
   camisetas: Camiseta[] = [];
 
   constructor(
     public router: Router,
-    private layoutService: LayoutService
+    private homeService: HomeService
   ) { }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class LayoutComponent implements OnInit {
   }
 
   findAllByOferta() {
-    this.layoutService.findAllByOfertas()
+    this.homeService.findAllByOfertas()
       .subscribe((response) => (this.camisetas = response));
   }
 

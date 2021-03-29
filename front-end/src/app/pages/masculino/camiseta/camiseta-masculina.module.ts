@@ -5,9 +5,10 @@ import { DialogExampleComponent } from "src/app/shared/componentes/dialog-camise
 import { DialogComponent } from "src/app/shared/componentes/dialog/dialog.component";
 import { MaterialModule } from "src/app/shared/componentes/material.module";
 import { SnackBar1, SnackBarDelete, SnackBarSucess, SnackBarUpdate } from "src/app/shared/componentes/snackbar/snackbar.component";
+import { CamisetaMasculinaService } from "src/app/shared/services/camiseta-masculina.service";
 import { SharedModule } from "src/app/shared/shared.module";
 import { CamisetaMasculinaRoutingModule } from "./camiseta-masculina-routing.module";
-import { CamisetaMasculinaService } from "./camiseta-masculina.service";
+
 import { CamisetaMasculinaFormComponent } from "./form/camiseta-masculina-form.component";
 import { CamisetaMasculinaListComponent } from "./list/camiseta-masculina-list.component";
 

@@ -1,6 +1,11 @@
 import { Routes } from "@angular/router";
 
-export const CONTENT_ROUTES: Routes = [
+export const CLIENTE_ROUTES: Routes = [
+    {
+        path: '',
+        loadChildren: () =>
+            import('../../pages/inicio/home.module').then((m) => m.HomeModule),
+    },
     {
         path: 'masculino/camisetas',
         loadChildren: () =>
