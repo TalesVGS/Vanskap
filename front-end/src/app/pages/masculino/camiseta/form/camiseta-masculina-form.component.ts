@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AbstractFormComponent } from "src/app/core/components/abstract-form-component";
+import { SnackBar1 } from "src/app/shared/componentes/snackbar/snackbar.component";
 import Camiseta from "src/app/shared/Data/camiseta";
 import { CamisetaMasculinaService } from "src/app/shared/services/camiseta-masculina.service";
 
@@ -34,9 +35,10 @@ export class CamisetaMasculinaFormComponent extends AbstractFormComponent<Camise
         protected service: CamisetaMasculinaService,
         protected router: Router,
         protected route: ActivatedRoute,
-        protected builder: FormBuilder
+        protected builder: FormBuilder,
+        public snackBar: SnackBar1
     ) {
-        super(service, router, route, builder);
+        super(service, router, route, builder, snackBar);
     }
 
     preview(files) {
@@ -70,6 +72,7 @@ export class CamisetaMasculinaFormComponent extends AbstractFormComponent<Camise
                 this.service.imgSettedVerify(false);
             });
     }
+    
     createForm(): void {
         this.camisetasMasculinasForm = this.builder.group({
             id: null,
@@ -83,4 +86,9 @@ export class CamisetaMasculinaFormComponent extends AbstractFormComponent<Camise
         });
     }
 
+    justNumbers(event): void {
+        const { value } = event.target;
+        this.camisetasMasculinasForm.get('valor')
+            .setValue(value.replace(/\D/g, ''));
+    }
 }

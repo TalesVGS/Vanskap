@@ -97,11 +97,13 @@
           <label label> Valor </label>
           <input
           input
-          type="number" 
+          type="string" 
           class="form-control"
+          id="valor"
           placeholder="R$ 100,00"
           maxlength="13"
           formControlName="valor"
+          (input)="justNumbers($event)"
           />
         </app-field-validation-container>
       </div>

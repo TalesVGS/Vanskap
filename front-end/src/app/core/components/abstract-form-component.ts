@@ -1,6 +1,7 @@
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { OnInit } from "@angular/core";
+import { SnackBar1 } from "src/app/shared/componentes/snackbar/snackbar.component";
 
 export abstract class AbstractFormComponent<T> implements OnInit {
     protected resultadoForm: FormGroup;
@@ -15,7 +16,8 @@ export abstract class AbstractFormComponent<T> implements OnInit {
         protected service: any,
         protected router: Router,
         protected route: ActivatedRoute,
-        protected builder: FormBuilder
+        protected builder: FormBuilder,
+        public snackBar: SnackBar1
     ) { }
 
     ngOnInit() {
@@ -74,6 +76,8 @@ export abstract class AbstractFormComponent<T> implements OnInit {
                     this.router.navigate([this.navRoute])
                 )
             );
+
+        this.openSnackBar();
     }
 
     onCancel(): void {
@@ -83,4 +87,12 @@ export abstract class AbstractFormComponent<T> implements OnInit {
     onChange(value) {
         this.oferta = value;
     }
+
+    openSnackBar() {
+        this.snackBar.openSnackBarSucess();
+        if (this.action == "alterar") {
+            this.snackBar.openSnackBarUpdate();
+        }
+    }
+
 }
