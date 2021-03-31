@@ -28,26 +28,32 @@
     </a>
 </div>
 
-<div class="container">
+<div class="container-sm">
     <div>
         <h3 style="margin-top: 30px;">Ofertas Masculinas Ativas</h3>
     </div>
 
-    <div class="row" >
-        <div class="col-lg-4" *ngFor="let camiseta of camisetas" style="margin-top: 20px;">
-            <div class="card">
-                <div class="card-body text-center">
-                    <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top img-fluid"
-                        alt="Camiseta Imagem" style="height: 180px; width: auto;" />
-                    <div class="card-description" style="height: 100px; width: auto;">
-                        <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
-                        <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
-                    </div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let camiseta of resultados">
+      <ng-template carouselSlide>
+        <div class="box">
+            <!-- //img-box  -->
+            <div class="slide-img">
+                <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" alt="Camiseta Masculina" class="img-fluid">
+          </div>
+          <!-- //detail-box -->
+            <div class="detail-box d-flex align-items-center text-center">
+                <!-- //type  -->
+                <div class="type">
+                    <a>{{ camiseta.nome }}</a>
+                    <span>{{ camiseta.marca }}</span>
+                    <!-- // price -->
+                    <h6 class="price">R$ {{ camiseta.valor }}</h6>
                 </div>
             </div>
         </div>
-    </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+
 </div>
-
-
-

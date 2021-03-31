@@ -6,11 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContentLayoutComponent } from './layouts/content/content-layout.component';
 import { CommonModule } from '@angular/common';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContentLayoutComponent,
+    ContentLayoutComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
