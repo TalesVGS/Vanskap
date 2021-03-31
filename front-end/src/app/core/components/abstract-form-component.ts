@@ -38,6 +38,7 @@ export abstract class AbstractFormComponent<T> implements OnInit {
             .subscribe((response) => {
                 this.resultadoForm.patchValue(response)
                 if (response.oferta) {
+                    this.onChange(response.oferta);
                     let radio1 = document.getElementById("inlineRadio1") as HTMLInputElement;
                     radio1.checked = true;
                 }

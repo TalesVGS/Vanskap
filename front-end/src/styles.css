@@ -9,7 +9,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     src: local(Amstrong)
 }
 
-
 .box:hover , .box-2:hover{
     transform: scale(1.04);
     transition: all 0.4s;
@@ -89,9 +88,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin: 8px;
 }
 
+.content-header span {
+    font-size: medium;
+}
+
 .col-lg-4 {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin: 17px 0px;
 }
 
 a {
@@ -99,15 +101,17 @@ a {
 }
 
 .box-2 {
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.210);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     overflow: hidden;
-    margin: 10px;
     cursor: pointer;
+    width: 280px;
+    margin: auto;
 }
 
 .slide-img-2 {
-    height: 380px;
+    height: 310px;
+    width: auto;
 }
 
 .slide-img-2 img {
@@ -118,6 +122,10 @@ a {
 
 .card {
     border: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .card-body {
@@ -127,10 +135,7 @@ a {
 .detail-box-2 {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
+    padding: 12px 15px;
     box-sizing: border-box;
     height: 100%;
 }
@@ -139,6 +144,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 160px;
+    width: 100%;
 }
 
 .type-2 a {

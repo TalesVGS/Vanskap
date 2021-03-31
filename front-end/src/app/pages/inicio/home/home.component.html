@@ -33,16 +33,16 @@
         <h3 style="margin-top: 30px;">Ofertas Masculinas Ativas</h3>
     </div>
 
-  <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let camiseta of resultados">
-      <ng-template carouselSlide>
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let camiseta of resultados">
+        <ng-template carouselSlide>
         <div class="box">
             <!-- //img-box  -->
             <div class="slide-img">
                 <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" alt="Camiseta Masculina" class="img-fluid">
-          </div>
-          <!-- //detail-box -->
-            <div class="detail-box d-flex align-items-center text-center">
+            </div>
+            <!-- //detail-box -->
+            <div class="detail-box text-center">
                 <!-- //type  -->
                 <div class="type">
                     <a>{{ camiseta.nome }}</a>
@@ -52,8 +52,7 @@
                 </div>
             </div>
         </div>
-      </ng-template>
-    </ng-container>
+        </ng-template>
+        </ng-container>
   </owl-carousel-o>
-
 </div>

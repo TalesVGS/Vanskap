@@ -1,71 +1,59 @@
-<div class="container-sm">
-    <div class="content-masc-list">
-        <div class="h2 text-left">
-            Camisetas Masculinas
-        </div>
-    
-        <div class="h6 text-left">
-            Mostrando: 1 - 40 de 100 resultados
-        </div>
-    
-        <div class="other">
-            <button class="new-camiseta" [routerLink]="['/masculino/camisetas/nova']">
-                + Camiseta
-            </button>
-        </div>
-    
-        <div class="row" >
-            <div class="col-lg-4" *ngFor="let camiseta of resultados">
-                <div class="card" style="width: auto;">
-                    <div class="box-2">
-                            <!-- //img-box   -->
-                        <div class="card-body text-center">
-                            <div class="slide-img-2">
-                                <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" alt="Camiseta Imagem"
-                                alt="Camiseta Imagem"/>
-                            </div>
-                            <!-- //detail-box  -->
-                            <div class="detail-box-2 d-flex align-items-center text-center">
-                                <div class="type-2">
-                                    <a>{{ camiseta.nome }}</a>
-                                    <span>{{ camiseta.marca }}</span>
-                                    <!-- // price  -->
-                                    <h6 class="price-2">R$ {{ camiseta.valor }}</h6>
-                                    <div class="buttons">
-                                        <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="400"
-                                            [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </button>
-                        
-                                        <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
-                                            matTooltipHideDelay="400" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
-                                        </button>
+<div class="container-fluid"> 
+    <div class="container-md">
+        <div class="content-masc-list">
+
+            <div class="">
+                <div class="h2">
+                    Camisetas Masculinas
+                </div>
+            
+                <div *ngFor="let camiseta of resultados; first as isFirst;" class="">
+                    <span *ngIf="isFirst">
+                        Total de {{ resultados.length }} Camisetas
+                    </span>
+                </div>
+            </div>
+            
+            <div class="other">
+                <button class="new-camiseta" [routerLink]="['/masculino/camisetas/nova']">
+                    + Camiseta
+                </button>
+            </div>
+        
+            <div class="row" >
+                <div class="col-lg-4" *ngFor="let camiseta of resultados">
+                    <div class="card">
+                        <div class="box-2">
+                            <div class="card-body">
+                                <!-- //img-box   -->
+                                <div class="slide-img-2">
+                                    <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" alt="Camiseta Imagem"/>
+                                </div>
+                                <!-- //detail-box  -->
+                                <div class="detail-box-2 text-center">
+                                    <!-- //type  -->
+                                    <div class="type-2">
+                                        <a>{{ camiseta.nome }}</a>
+                                        <span>{{ camiseta.marca }}</span>
+                                        <!-- // price  -->
+                                        <h6 class="price-2">R$ {{ camiseta.valor }}</h6>
+                                        <div class="buttons">
+                                            <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="400"
+                                                [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                            
+                                            <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
+                                                matTooltipHideDelay="400" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                         </div>
+                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-                <!-- <div class="card">
-                    <div class="card-body text-center">
-                        <img src="http://localhost:8080/images/{{camiseta.imageUrl}}" class="card-img-top img-fluid"
-                            alt="Camiseta Imagem" style="height: 270px; width: auto;"/>
-                        <div class="card-description" style="height: 160px; width: auto;">
-                            <h5 class="card-tittle">{{ camiseta.nome }} {{ camiseta.marca }}</h5>
-                            <h5 class="card-text"><b>R$ {{ camiseta.valor }}</b></h5>
-            
-                            <button class="btn-edit" matTooltip="Alterar" matTooltipPosition="left" matTooltipHideDelay="400"
-                                [routerLink]="['/masculino/camisetas/alterar', camiseta.id]">
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>
-            
-                            <button class="btn-delete-2" matTooltip="Excluir" matTooltipPosition="right"
-                                matTooltipHideDelay="400" (click)="openModal(camiseta)"><i class="far fa-trash-alt"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
         </div>
     </div>
 </div>
