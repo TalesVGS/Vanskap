@@ -2,14 +2,14 @@
     <div class="container-md">
         <div class="content-masc-list">
 
-            <div class="">
+            <div class="content-header">
                 <div class="h2">
                     Camisetas Masculinas
                 </div>
             
                 <div *ngFor="let camiseta of resultados; first as isFirst;" class="">
                     <span *ngIf="isFirst">
-                        Total de {{ resultados.length }} Camisetas
+                        {{ resultados.length }} Camisetas Encontradas
                     </span>
                 </div>
             </div>
