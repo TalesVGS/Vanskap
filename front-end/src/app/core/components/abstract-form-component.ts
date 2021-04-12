@@ -42,7 +42,7 @@ export abstract class AbstractFormComponent<T> implements OnInit {
                     let radio1 = document.getElementById("inlineRadio1") as HTMLInputElement;
                     radio1.checked = true;
                 }
-            }); 
+            });
     }
 
     onSave(): void {
@@ -69,7 +69,7 @@ export abstract class AbstractFormComponent<T> implements OnInit {
             }
             return;
         }
-        
+
         this.service
             .save(this.resultadoForm.value, ImgFile)
             .then((observable) =>
